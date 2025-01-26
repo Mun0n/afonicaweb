@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaSpotify, FaTiktok } from 'react-icons/fa';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -109,64 +109,59 @@ export default function Home() {
     '/images/hero/hero-6.webp'
   ];
 
-  // Generate structured data for events
-  const eventStructuredData = {
+  const eventStructuredData = useMemo(() => ({
     '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    itemListElement: upcomingShows.map((show, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
-        '@type': 'MusicEvent',
-        name: `Afónica Naranjo en ${show.venue}`,
-        startDate: show.date,
-        location: {
-          '@type': 'Place',
-          name: show.venue,
-          address: {
-            '@type': 'PostalAddress',
-            addressLocality: show.city,
-            addressCountry: 'ES'
-          }
-        },
-        performer: {
-          '@type': 'MusicGroup',
-          name: 'Afónica Naranjo',
-          genre: ['Punk Rock', 'Hardcore']
-        },
-        offers: show.venue === "Cebrecos Fest" ? {
-          '@type': 'Offer',
-          price: '0',
-          priceCurrency: 'EUR',
-          availability: 'https://schema.org/InStock'
-        } : show.ticketUrl ? {
-          '@type': 'Offer',
-          url: show.ticketUrl,
-          availability: 'https://schema.org/InStock'
-        } : undefined
+    '@type': 'MusicEvent',
+    'events': upcomingShows.map(show => ({
+      '@type': 'MusicEvent',
+      'name': `Afónica Naranjo en ${show.venue}`,
+      'startDate': show.date,
+      'location': {
+        '@type': 'Place',
+        'name': show.venue,
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': show.city,
+          'addressCountry': 'ES'
+        }
+      },
+      'performer': {
+        '@type': 'MusicGroup',
+        'name': 'Afónica Naranjo',
+        'genre': ['Punk Rock', 'Hardcore', 'Covers']
+      },
+      'offers': show.venue === 'Cebrecos Fest' ? {
+        '@type': 'Offer',
+        'price': '0',
+        'priceCurrency': 'EUR',
+        'availability': 'https://schema.org/InStock'
+      } : show.ticketUrl ? {
+        '@type': 'Offer',
+        'url': show.ticketUrl,
+        'availability': 'https://schema.org/InStock'
+      } : {
+        '@type': 'Offer',
+        'availability': 'https://schema.org/PreOrder'
       }
     }))
-  };
+  }), [upcomingShows]);
 
   useEffect(() => {
-    // Add structured data to head
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.text = JSON.stringify(eventStructuredData);
     document.head.appendChild(script);
-
     return () => {
       document.head.removeChild(script);
     };
-  }, [upcomingShows]);
+  }, [eventStructuredData]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
-
+    }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [heroImages.length]);
 
   return (
     <main className="min-h-screen bg-black text-white">

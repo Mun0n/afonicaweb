@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 interface ProductCardProps {
-  id: string;
   name: string;
   description: string;
   price: number;
@@ -13,11 +12,10 @@ interface ProductCardProps {
     front: string;
     back: string;
   };
-  prestashopId: string;
   prestashopUrl: string;
 }
 
-export default function ProductCard({ id, name, description, price, images, prestashopId, prestashopUrl }: ProductCardProps) {
+export default function ProductCard({ name, description, price, images, prestashopUrl }: ProductCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
