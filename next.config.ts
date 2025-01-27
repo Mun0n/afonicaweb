@@ -12,13 +12,14 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  rewrites: async () => {
+  async redirects() {
     return [
       {
         source: '/prestashop/:path*',
-        destination: 'http://147.79.103.232/prestashop/:path*'
-      }
-    ];
+        destination: 'https://shop.afonicanaranjo.com/prestashop/:path*',
+        permanent: true,
+      },
+    ]
   }
 };
 
