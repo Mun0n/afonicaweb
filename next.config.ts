@@ -12,15 +12,6 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  async redirects() {
-    return [
-      {
-        source: '/prestashop/:path*',
-        destination: 'https://shop.afonicanaranjo.com/prestashop/:path*',
-        permanent: true,
-      },
-    ]
-  }
 };
 
 export default config;
