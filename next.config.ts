@@ -16,7 +16,7 @@ const config: NextConfig = {
     return [
       {
         source: '/prestashop/:path*',
-        destination: 'https://shop.afonicanaranjo.com/prestashop/:path*'
+        destination: 'http://147.79.103.232/prestashop/:path*'
       }
     ];
   }
