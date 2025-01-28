@@ -1,0 +1,6 @@
+prestashop/
+prestashop.zip
+.git/
+node_modules/
+.next/
+public/shop/ 

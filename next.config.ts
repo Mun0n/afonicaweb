@@ -8,10 +8,19 @@ const config: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    domains: ['afonicanaranjo.com'],
   },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/shop/:path*',
+        destination: 'https://afonicanaranjo.com/shop/:path*',
+      },
+    ];
+  },
 };
 
 export default config;
