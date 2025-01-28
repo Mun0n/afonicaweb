@@ -13,6 +13,40 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  skipMiddlewareUrlNormalize: true,
+  skipTrailingSlashRedirect: true,
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/shop/:path*',
+          destination: 'https://156.67.74.51/shop/:path*',
+          has: [
+            {
+              type: 'header',
+              key: 'x-skip-next',
+              value: '(?!true)',
+            },
+          ],
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
+  },
+  async headers() {
+    return [
+      {
+        source: '/shop/:path*',
+        headers: [
+          {
+            key: 'x-skip-next',
+            value: 'true',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default config;
