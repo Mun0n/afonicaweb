@@ -13,14 +13,6 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  async rewrites() {
-    return [
-      {
-        source: '/shop/:path*',
-        destination: 'http://156.67.74.51/shop/:path*',
-      }
-    ];
-  }
 };
 
 export default config;
