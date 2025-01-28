@@ -13,11 +13,17 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  async rewrites() {
+  // Exclude /shop from Next.js handling
+  async headers() {
     return [
       {
         source: '/shop/:path*',
-        destination: 'https://afonicanaranjo.com/shop/:path*',
+        headers: [
+          {
+            key: 'x-middleware-skip',
+            value: 'true',
+          },
+        ],
       },
     ];
   },

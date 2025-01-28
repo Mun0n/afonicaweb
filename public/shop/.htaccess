@@ -1,0 +1,19 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Ensure proper handling of PHP files
+<FilesMatch "\.(php|html?)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# PHP settings
+<IfModule mod_php.c>
+    php_flag display_errors off
+</IfModule>
+
+# Handle Install_PrestaShop.html
+<Files "Install_PrestaShop.html">
+    AddType application/x-httpd-php .html
+    SetHandler application/x-httpd-php
+</Files> 
