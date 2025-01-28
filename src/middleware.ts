@@ -4,6 +4,11 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // If the request is for /shop, bypass Next.js
+  if (pathname.startsWith('/shop')) {
+    return NextResponse.rewrite(new URL(request.url));
+  }
+
   // Handle Prestashop assets and routes under /shop
   if (pathname.startsWith('/shop')) {
     // Keep the original request headers
@@ -24,5 +29,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: '/shop/:path*',
+  matcher: ['/shop/:path*'],
 }; 

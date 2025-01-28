@@ -13,17 +13,19 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  async rewrites() {
-    return {
-      beforeFiles: [],
-      afterFiles: [],
-      fallback: [
-        {
-          source: '/shop/:path*',
-          destination: `${process.env.NEXT_PUBLIC_SITE_URL}/shop/:path*`,
-        },
-      ],
-    };
+  basePath: '',
+  async headers() {
+    return [
+      {
+        source: '/shop/:path*',
+        headers: [
+          {
+            key: 'x-custom-header',
+            value: 'pass-through',
+          },
+        ],
+      },
+    ];
   },
 };
 
