@@ -13,20 +13,6 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  basePath: '',
-  async headers() {
-    return [
-      {
-        source: '/shop/:path*',
-        headers: [
-          {
-            key: 'x-custom-header',
-            value: 'pass-through',
-          },
-        ],
-      },
-    ];
-  },
 };
 
 export default config;
