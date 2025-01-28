@@ -1,21 +1,20 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "headers": [
+  "routes": [
     {
-      "source": "/shop/(.*)",
-      "headers": [
-        {
-          "key": "x-middleware-skip",
-          "value": "1"
-        }
-      ]
+      "src": "/shop/(.*)",
+      "dest": "https://afonicanaranjo.com/shop/$1",
+      "continue": true
     }
   ],
-  "rewrites": [
+  "builds": [
     {
-      "source": "/shop/:path*",
-      "destination": "https://afonicanaranjo.com/shop/:path*"
+      "src": "package.json",
+      "use": "@vercel/next"
     }
+  ],
+  "ignoreRoutes": [
+    "/shop/(.*)"
   ]
 } 
