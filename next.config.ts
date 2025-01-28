@@ -13,19 +13,18 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  // Exclude /shop from Next.js handling
-  async headers() {
-    return [
-      {
-        source: '/shop/:path*',
-        headers: [
-          {
-            key: 'x-middleware-skip',
-            value: 'true',
-          },
-        ],
-      },
-    ];
+  // Completely exclude /shop from Next.js
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/shop/:path*',
+          destination: '/404',
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
 };
 

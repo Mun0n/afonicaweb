@@ -1,18 +1,31 @@
 # Enable rewrite engine
 RewriteEngine On
 
-# Ensure proper handling of PHP files
-<FilesMatch "\.(php|html?)$">
-    Order Allow,Deny
-    Allow from all
+# Allow access to all files
+Options +FollowSymLinks
+Options -MultiViews
+
+# Set default directory index
+DirectoryIndex index.php Install_PrestaShop.html
+
+# Allow execution of PHP files
+<FilesMatch "\.php$">
+    Require all granted
 </FilesMatch>
 
-# PHP settings
-<IfModule mod_php.c>
-    php_flag display_errors off
-</IfModule>
+# Allow access to HTML files
+<FilesMatch "\.html$">
+    Require all granted
+</FilesMatch>
 
-# Handle Install_PrestaShop.html
+# Allow access to the directory
+<Directory "/shop">
+    Options +Indexes
+    AllowOverride All
+    Require all granted
+</Directory>
+
+# Handle Install_PrestaShop.html as PHP
 <Files "Install_PrestaShop.html">
     AddType application/x-httpd-php .html
     SetHandler application/x-httpd-php
