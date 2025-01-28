@@ -13,17 +13,16 @@ const config: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  // Completely exclude /shop from Next.js
   async rewrites() {
     return {
-      beforeFiles: [
+      beforeFiles: [],
+      afterFiles: [],
+      fallback: [
         {
           source: '/shop/:path*',
-          destination: '/404',
+          destination: `${process.env.NEXT_PUBLIC_SITE_URL}/shop/:path*`,
         },
       ],
-      afterFiles: [],
-      fallback: [],
     };
   },
 };

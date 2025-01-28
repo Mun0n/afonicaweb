@@ -1,32 +1,14 @@
 # Enable rewrite engine
 RewriteEngine On
 
+# Set default index files
+DirectoryIndex Install_PrestaShop.html index.php
+
 # Allow access to all files
-Options +FollowSymLinks
-Options -MultiViews
+Options +Indexes +FollowSymLinks
+AllowOverride All
+Require all granted
 
-# Set default directory index
-DirectoryIndex index.php Install_PrestaShop.html
-
-# Allow execution of PHP files
-<FilesMatch "\.php$">
-    Require all granted
-</FilesMatch>
-
-# Allow access to HTML files
-<FilesMatch "\.html$">
-    Require all granted
-</FilesMatch>
-
-# Allow access to the directory
-<Directory "/shop">
-    Options +Indexes
-    AllowOverride All
-    Require all granted
-</Directory>
-
-# Handle Install_PrestaShop.html as PHP
-<Files "Install_PrestaShop.html">
-    AddType application/x-httpd-php .html
-    SetHandler application/x-httpd-php
-</Files> 
+# PHP handling
+AddType application/x-httpd-php .php .html
+SetHandler application/x-httpd-php 
