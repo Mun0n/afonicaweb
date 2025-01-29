@@ -7,8 +7,16 @@ export function middleware(request: NextRequest) {
 
   // Check if it's the shop subdomain
   if (hostname.startsWith('shop.')) {
-    const targetUrl = `http://156.67.74.51/shop${pathname === '/' ? '' : pathname}${search}`
-    return NextResponse.redirect(targetUrl)
+    // Create URL with HTTPS
+    const targetUrl = new URL(`https://156.67.74.51/shop${pathname === '/' ? '' : pathname}${search}`)
+    return NextResponse.redirect(targetUrl.toString(), {
+      status: 307,
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
+    })
   }
 
   return NextResponse.next()
