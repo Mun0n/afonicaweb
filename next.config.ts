@@ -8,7 +8,20 @@ const config: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: ['afonicanaranjo.com'],
+    domains: [
+      'afonicanaranjo.com',
+      'www.afonicanaranjo.com',
+      'shop.afonicanaranjo.com',
+      'cdn.afonicanaranjo.com'
+    ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/prestashop/:path*',
+        destination: `${process.env.PRESTASHOP_URL}/api/:path*`,
+      },
+    ];
   },
   compress: true,
   poweredByHeader: false,

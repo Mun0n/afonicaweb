@@ -14,14 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Add product routes
-  const productRoutes = mockBandInfo.products.map((product) => ({
-    url: `${baseUrl}/tienda/${product.id}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
-
   // Add show routes
   const showRoutes = mockBandInfo.upcomingShows.map((show) => ({
     url: `${baseUrl}/conciertos/${show.date}`,
@@ -30,5 +22,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...routes, ...productRoutes, ...showRoutes];
+  return [...routes, ...showRoutes];
 } 
