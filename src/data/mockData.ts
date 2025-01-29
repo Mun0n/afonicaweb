@@ -5,18 +5,41 @@ export const mockBandInfo: BandInfo = {
   bio: "Afónica Naranjo es una banda de versiones punk-rock-HxC que transforma los grandes éxitos en explosiones de punk y hardcore, creando una inesperada comunión entre la tía Amparo y el punki del pueblo.",
   upcomingShows: [
     {
-      date: "2024-05-24",
-      venue: "GalliRock",
-      city: "Pozal de Gallinas",
-      ticketUrl: ""
+      date: "2025-02-08",
+      time: "19:00",
+      venue: "Sala Repvblicca",
+      city: "Valencia",
+      address: "Mislata",
+      ticketUrl: "",
+      price: "Free",
+      status: "upcoming"
     },
     {
-      date: "2024-07-26",
+      date: "2025-05-24",
+      time: "All day",
+      venue: "GalliRock",
+      city: "Pozal de Gallinas (Valladolid)",
+      ticketUrl: "",
+      status: "upcoming"
+    },
+    {
+      date: "2025-07-19",
+      time: "All day",
+      venue: "Farragüa Fest",
+      city: "Deleitosa (Cáceres)",
+      ticketUrl: "",
+      status: "upcoming"
+    },
+    {
+      date: "2025-07-26",
+      time: "All day",
       venue: "Cebrecos Fest",
-      city: "Cebrecos",
-      ticketUrl: ""
+      city: "Cebrecos (Burgos)",
+      ticketUrl: "",
+      status: "upcoming"
     }
   ],
+  pastShows: [],
   photos: [
     '/images/hero/hero-1.webp',
     '/images/hero/hero-2.webp',
