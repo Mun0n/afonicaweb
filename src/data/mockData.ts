@@ -35,7 +35,7 @@ export const mockBandInfo: BandInfo = {
         front: '/images/products/tshirt-front.webp',
         back: '/images/products/tshirt-amaia-back.webp'
       },
-      prestashopUrl: process.env.NEXT_PUBLIC_PRESTASHOP_URL + '/index.php?id_product=20&rewrite=amaia-vive-t-shirt&controller=product'
+      prestashopUrl: 'https://shop.afonicanaranjo.com/merch-afonica-naranjo/1-3-amaia-vive-camiseta-afonica-naranjo.html#/3-talla-unisex_l'
     },
     {
       id: 'tshirt-chayanne',
@@ -46,7 +46,7 @@ export const mockBandInfo: BandInfo = {
         front: '/images/products/tshirt-front.webp',
         back: '/images/products/tshirt-chayanne-back.webp'
       },
-      prestashopUrl: process.env.NEXT_PUBLIC_PRESTASHOP_URL + '/index.php?id_product=21&rewrite=aprobado-por-chayanne-t-shirt&controller=product'
+      prestashopUrl: 'https://shop.afonicanaranjo.com/merch-afonica-naranjo/2-12-aprobado-por-chayanne-camiseta-afonica-naranjo.html#/3-talla-unisex_l'
     }
   ],
   socialMedia: [
