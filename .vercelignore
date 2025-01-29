@@ -3,4 +3,5 @@ prestashop.zip
 .git/
 node_modules/
 .next/
-public/shop/ 
+public/prestashop
+public/shop 
