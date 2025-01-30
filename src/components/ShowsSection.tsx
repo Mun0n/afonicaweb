@@ -1,69 +1,103 @@
-import { useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { useBandContext } from '../context/BandContext';
-import { Show } from '../types/band';
-import { filterShowsByDate, sortShowsByDate } from '../utils/dateUtils';
+'use client';
+
+import { useEffect } from 'react';
 
 export default function ShowsSection() {
-  const { upcomingShows: allShows } = useBandContext();
+  useEffect(() => {
+    // Load Bandsintown widget script
+    const script = document.createElement('script');
+    script.src = 'https://widgetv3.bandsintown.com/main.min.js';
+    script.charset = 'utf-8';
+    script.async = true;
+    document.body.appendChild(script);
 
-  const { upcomingShows } = useMemo(() => {
-    if (!allShows || allShows.length === 0) return { upcomingShows: [] };
-    const filtered = filterShowsByDate(allShows);
-    return {
-      upcomingShows: sortShowsByDate(filtered.upcomingShows)
+    return () => {
+      document.body.removeChild(script);
     };
-  }, [allShows]);
-
-  if (!upcomingShows || upcomingShows.length === 0) return null;
+  }, []);
 
   return (
     <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900" id="conciertos">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 text-center">Próximos Conciertos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
-          {upcomingShows.map((show: Show, index: number) => (
-            <motion.div
-              key={`${show.date}-${show.venue}`}
-              className="bg-black p-4 md:p-6 rounded-lg shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="text-white">
-                <div className="text-xl font-bold mb-2">{show.venue}</div>
-                <div className="text-gray-400 mb-1 text-sm md:text-base">{show.city}</div>
-                <div className="text-gray-400 mb-1 text-sm md:text-base">
-                  {new Date(show.date).toLocaleDateString('es-ES', { 
-                    weekday: 'long',
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </div>
-                {show.time && (
-                  <div className="text-gray-400 mb-4 text-sm md:text-base">{show.time}</div>
-                )}
-                {show.price === "Free" || show.venue === "Cebrecos Fest" ? (
-                  <span className="inline-block bg-brand-orange text-brand-white px-4 py-2.5 rounded font-medium text-sm md:text-base w-full md:w-auto text-center">
-                    Entrada Libre
-                  </span>
-                ) : show.ticketUrl ? (
-                  <a 
-                    href={show.ticketUrl}
-                    className="inline-block bg-brand-orange text-brand-white px-4 py-2.5 rounded hover:opacity-90 transition-colors text-sm md:text-base w-full md:w-auto text-center"
-                  >
-                    Comprar Entradas
-                  </a>
-                ) : (
-                  <span className="inline-block bg-gray-700 text-brand-white px-4 py-2.5 rounded text-sm md:text-base w-full md:w-auto text-center">
-                    Entradas Próximamente
-                  </span>
-                )}
-              </div>
-            </motion.div>
-          ))}
+        <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-b from-gray-900/30 to-black/40 backdrop-blur-sm border border-gray-800/20">
+          <a 
+            className="bit-widget-initializer"
+            data-artist-name="id_15572618"
+            data-events-to-display=""
+            data-background-color="rgba(0,0,0,0)"
+            data-separator-color="rgba(255,87,51,0.1)"
+            data-text-color="rgba(255,87,51,1)"
+            data-font="Helvetica"
+            data-auto-style="true"
+            data-button-label-capitalization="uppercase"
+            data-header-capitalization="uppercase"
+            data-location-capitalization="uppercase"
+            data-venue-capitalization="uppercase"
+            data-display-local-dates="true"
+            data-local-dates-position="tab"
+            data-display-past-dates="false"
+            data-display-details="false"
+            data-display-lineup="false"
+            data-display-start-time="false"
+            data-social-share-icon="false"
+            data-display-limit="all"
+            data-date-format="MMM. D, YYYY"
+            data-date-orientation="horizontal"
+            data-date-border-color="rgba(255,87,51,0.2)"
+            data-date-border-width="1px"
+            data-date-capitalization="capitalize"
+            data-date-border-radius="8px"
+            data-event-ticket-cta-size="medium"
+            data-event-custom-ticket-text=""
+            data-event-ticket-text="TICKETS"
+            data-event-ticket-icon="false"
+            data-event-ticket-cta-text-color="rgba(255,255,255,1)"
+            data-event-ticket-cta-bg-color="rgba(255,87,51,1)"
+            data-event-ticket-cta-border-color="rgba(255,87,51,0.3)"
+            data-event-ticket-cta-border-width="0px"
+            data-event-ticket-cta-border-radius="6px"
+            data-sold-out-button-text-color="rgba(255,255,255,0.9)"
+            data-sold-out-button-background-color="rgba(74,74,74,0.8)"
+            data-sold-out-button-border-color="rgba(74,74,74,0.5)"
+            data-sold-out-button-clickable="true"
+            data-event-rsvp-position="left"
+            data-event-rsvp-cta-size="medium"
+            data-event-rsvp-only-show-icon="false"
+            data-event-rsvp-text="RSVP"
+            data-event-rsvp-icon="false"
+            data-event-rsvp-cta-text-color="rgba(255,87,51,1)"
+            data-event-rsvp-cta-bg-color="rgba(255,255,255,0.05)"
+            data-event-rsvp-cta-border-color="rgba(255,87,51,0.3)"
+            data-event-rsvp-cta-border-width="1px"
+            data-event-rsvp-cta-border-radius="6px"
+            data-follow-section-position="top"
+            data-follow-section-alignment="center"
+            data-follow-section-header-text="Vamos a tocar a tu pueblo ¿y no te has enterado?"
+            data-follow-section-cta-size="medium"
+            data-follow-section-cta-text="FOLLOW"
+            data-follow-section-cta-icon="false"
+            data-follow-section-cta-text-color="rgba(255,255,255,1)"
+            data-follow-section-cta-bg-color="rgba(255,87,51,1)"
+            data-follow-section-cta-border-color="rgba(255,87,51,0.3)"
+            data-follow-section-cta-border-width="0px"
+            data-follow-section-cta-border-radius="6px"
+            data-play-my-city-position="bottom"
+            data-play-my-city-alignment="center"
+            data-play-my-city-header-text="¿Quieres que toquemos en tu casa?"
+            data-play-my-city-cta-size="medium"
+            data-play-my-city-cta-text="REQUEST A SHOW"
+            data-play-my-city-cta-icon="false"
+            data-play-my-city-cta-text-color="rgba(255,255,255,1)"
+            data-play-my-city-cta-bg-color="rgba(255,87,51,1)"
+            data-play-my-city-cta-border-color="rgba(255,87,51,0.3)"
+            data-play-my-city-cta-border-width="0px"
+            data-play-my-city-cta-border-radius="6px"
+            data-language="es"
+            data-layout-breakpoint="900"
+            data-bit-logo-position="bottomRight"
+            data-bit-logo-color="rgba(255,87,51,0.8)"
+          />
         </div>
       </div>
     </section>
