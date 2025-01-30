@@ -4,6 +4,7 @@ import "./globals.css";
 import { BandProvider } from '../context/BandContext';
 import { defaultSEO } from '../config/seo';
 import { Analytics } from '@vercel/analytics/react';
+import Toolbar from '../components/Toolbar';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -119,9 +120,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-16`}
       >
         <BandProvider>
+          <Toolbar />
           {children}
         </BandProvider>
         <Analytics />
