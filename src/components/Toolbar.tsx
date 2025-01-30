@@ -42,7 +42,7 @@ const Toolbar = () => {
             <FaYoutube size={20} />
           </a>
           <a
-            href="https://open.spotify.com/artist/afonicanaranjo"
+            href="https://open.spotify.com/artist/5TYxZTjIPqKM8K8NuP9woO"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-[#1DB954] transition-colors"
