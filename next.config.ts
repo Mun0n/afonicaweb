@@ -1,12 +1,11 @@
 import type { NextConfig } from "next";
 import bundleAnalyzer from '@next/bundle-analyzer';
-import withPWA from 'next-pwa';
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const baseConfig: NextConfig = {
+const config: NextConfig = {
   images: {
     formats: ['image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
@@ -14,18 +13,33 @@ const baseConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    domains: [
-      'afonicanaranjo.com',
-      'www.afonicanaranjo.com',
-      'shop.afonicanaranjo.com',
-      'cdn.afonicanaranjo.com'
-    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'afonicanaranjo.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.afonicanaranjo.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'shop.afonicanaranjo.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.afonicanaranjo.com'
+      }
+    ]
   },
   async rewrites() {
+    if (!process.env.NEXT_PUBLIC_PRESTASHOP_URL) {
+      return [];
+    }
     return [
       {
         source: '/api/prestashop/:path*',
-        destination: `${process.env.PRESTASHOP_URL}/api/:path*`,
+        destination: `${process.env.NEXT_PUBLIC_PRESTASHOP_URL}/api/:path*`,
       },
     ];
   },
@@ -56,13 +70,4 @@ const baseConfig: NextConfig = {
   reactStrictMode: true,
 };
 
-const withPWAConfig = withPWA({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development'
-});
-
-const config = withPWAConfig(withBundleAnalyzer(baseConfig));
-
-export default config;
+export default withBundleAnalyzer(config);
