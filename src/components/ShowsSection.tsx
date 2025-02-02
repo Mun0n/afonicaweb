@@ -17,7 +17,7 @@ export default function ShowsSection() {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900" id="conciertos">
+    <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900" id="bandsintown-widget">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 text-center">Próximos Conciertos</h2>
         <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-b from-gray-900/30 to-black/40 backdrop-blur-sm border border-gray-800/20">

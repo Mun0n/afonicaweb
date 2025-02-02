@@ -45,11 +45,12 @@ export const metadata: Metadata = {
     images: ['/images/hero/hero-1.webp'],
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://afonicanaranjo.com',
   },
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -120,7 +121,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-16`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-16 bg-black`}
       >
         <BandProvider>
           <Toolbar />

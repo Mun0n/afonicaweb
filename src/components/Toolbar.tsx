@@ -53,24 +53,18 @@ const Toolbar = () => {
       </div>
       
       <div className="flex items-center gap-6">
-        <a
-          href="#"
-          className="text-white hover:text-[#FF0000] transition-colors font-medium"
-        >
+        <Link href="/" className="text-white hover:text-[#FF0000] transition-colors font-medium">
           Inicio
-        </a>
-        <a
-          href="#conciertos"
-          className="text-white hover:text-[#FF0000] transition-colors font-medium"
-        >
+        </Link>
+        <Link href="/#bandsintown-widget" className="text-white hover:text-[#FF0000] transition-colors font-medium">
           Conciertos
-        </a>
-        <a
-          href="#tienda"
-          className="text-white hover:text-[#FF0000] transition-colors font-medium"
-        >
+        </Link>
+        <Link href="/#tienda" className="text-white hover:text-[#FF0000] transition-colors font-medium">
           Tienda
-        </a>
+        </Link>
+        <Link href="/contacto" className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          Contacto
+        </Link>
       </div>
     </nav>
   );

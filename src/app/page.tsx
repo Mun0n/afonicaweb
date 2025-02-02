@@ -1,13 +1,12 @@
 'use client';
 
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { FaInstagram, FaFacebookF, FaYoutube, FaSpotify, FaTiktok } from 'react-icons/fa';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBandContext } from '../context/BandContext';
 import { SocialMedia } from '../types/band';
 import ShopSection from '../components/ShopSection';
-import ShowsSection from '../components/ShowsSection';
 
 function Footer() {
   const { socialMedia } = useBandContext();
@@ -45,74 +44,38 @@ function Footer() {
 }
 
 export default function Home() {
-  const { bio, upcomingShows } = useBandContext();
+  const { bio } = useBandContext();
+  const [mounted, setMounted] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+
   const heroImages = [
     '/images/hero/hero-1.webp',
     '/images/hero/hero-2.webp',
     '/images/hero/hero-3.webp',
     '/images/hero/hero-4.webp',
     '/images/hero/hero-5.webp',
-    '/images/hero/hero-6.webp'
+    '/images/hero/hero-6.webp',
+    '/images/hero/hero-7.webp'
   ];
 
-  const eventStructuredData = useMemo(() => ({
-    '@context': 'https://schema.org',
-    '@type': 'MusicEvent',
-    'events': upcomingShows.map(show => ({
-      '@type': 'MusicEvent',
-      'name': `Afónica Naranjo en ${show.venue}`,
-      'startDate': show.date,
-      'location': {
-        '@type': 'Place',
-        'name': show.venue,
-        'address': {
-          '@type': 'PostalAddress',
-          'addressLocality': show.city,
-          'addressCountry': 'ES'
-        }
-      },
-      'performer': {
-        '@type': 'MusicGroup',
-        'name': 'Afónica Naranjo',
-        'genre': ['Punk Rock', 'Hardcore', 'Covers']
-      },
-      'offers': show.venue === 'Cebrecos Fest' ? {
-        '@type': 'Offer',
-        'price': '0',
-        'priceCurrency': 'EUR',
-        'availability': 'https://schema.org/InStock'
-      } : show.ticketUrl ? {
-        '@type': 'Offer',
-        'url': show.ticketUrl,
-        'availability': 'https://schema.org/InStock'
-      } : {
-        '@type': 'Offer',
-        'availability': 'https://schema.org/PreOrder'
-      }
-    }))
-  }), [upcomingShows]);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(eventStructuredData);
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, [eventStructuredData]);
-
-  useEffect(() => {
+    if (!mounted) return;
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [heroImages.length]);
+  }, [mounted, heroImages.length]);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen text-white">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black z-10" />
@@ -164,7 +127,6 @@ export default function Home() {
         </div>
       </section>
 
-      <ShowsSection />
       <ShopSection />
       <Footer />
     </main>
