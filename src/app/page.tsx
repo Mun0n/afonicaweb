@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useBandContext } from '../context/BandContext';
 import { SocialMedia } from '../types/band';
 import ShopSection from '../components/ShopSection';
+import ShowsSection from '../components/ShowsSection';
 
 function Footer() {
   const { socialMedia } = useBandContext();
@@ -127,6 +128,7 @@ export default function Home() {
         </div>
       </section>
 
+      <ShowsSection />
       <ShopSection />
       <Footer />
     </main>
