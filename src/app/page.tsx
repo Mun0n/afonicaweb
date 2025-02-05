@@ -18,7 +18,6 @@ const ShopSection = dynamic(() => import('../components/ShopSection'), {
 
 export default function HomePage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,7 +46,7 @@ export default function HomePage() {
                 fill
                 priority={currentImageIndex === 0}
                 className="object-cover object-center w-11/12 mx-auto"
-                onLoadingComplete={() => setIsLoading(false)}
+                onLoad={() => {}}
                 sizes="100vw"
               />
             </motion.div>
