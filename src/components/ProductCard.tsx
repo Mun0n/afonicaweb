@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -19,13 +19,16 @@ export default function ProductCard({ name, description, price, images, prestash
   const [isFlipped, setIsFlipped] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleMouseInteraction = useCallback((state: boolean) => {
+    setIsHovered(state);
+  }, []);
+
   // Auto-flip when not hovered
   useEffect(() => {
     if (!isHovered) {
       const interval = setInterval(() => {
         setIsFlipped(prev => !prev);
-      }, 3000); // Flip every 3 seconds
-
+      }, 3000);
       return () => clearInterval(interval);
     }
   }, [isHovered]);
@@ -38,10 +41,10 @@ export default function ProductCard({ name, description, price, images, prestash
     >
       <div 
         className="relative aspect-[5/6] cursor-pointer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onTouchStart={() => setIsHovered(true)}
-        onTouchEnd={() => setIsHovered(false)}
+        onMouseEnter={() => handleMouseInteraction(true)}
+        onMouseLeave={() => handleMouseInteraction(false)}
+        onTouchStart={() => handleMouseInteraction(true)}
+        onTouchEnd={() => handleMouseInteraction(false)}
       >
         <div className={`absolute inset-0 transition-opacity duration-700 ${isFlipped ? 'opacity-100' : 'opacity-0'}`}>
           <Image
@@ -50,6 +53,8 @@ export default function ProductCard({ name, description, price, images, prestash
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="lazy"
+            quality={75}
           />
         </div>
         <div className={`absolute inset-0 transition-opacity duration-700 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}>
@@ -59,6 +64,8 @@ export default function ProductCard({ name, description, price, images, prestash
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading="lazy"
+            quality={75}
           />
         </div>
         

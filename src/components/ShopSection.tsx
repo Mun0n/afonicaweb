@@ -1,7 +1,9 @@
 "use client";
 
+import { Suspense } from 'react';
 import { useBandContext } from '../context/BandContext';
 import ProductCard from './ProductCard';
+import { ProductGridSkeleton } from './skeletons/ProductSkeleton';
 
 export default function ShopSection() {
   const { products } = useBandContext();
@@ -12,11 +14,13 @@ export default function ShopSection() {
     <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900" id="tienda">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 text-center">Tienda</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
-          {products.map((product) => (
-            <ProductCard key={product.id} {...product} />
-          ))}
-        </div>
+        <Suspense fallback={<ProductGridSkeleton />}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+            {products.map((product) => (
+              <ProductCard key={product.id} {...product} />
+            ))}
+          </div>
+        </Suspense>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import { BandProvider } from '../context/BandContext';
 import { defaultSEO } from '../config/seo';
 import { Analytics } from '@vercel/analytics/react';
 import Toolbar from '../components/Toolbar';
+import { Footer } from '../components/Footer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -126,6 +127,7 @@ export default function RootLayout({
         <BandProvider>
           <Toolbar />
           {children}
+          <Footer />
         </BandProvider>
         <Analytics />
       </body>

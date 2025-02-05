@@ -15,27 +15,48 @@
 - Fixed deployment issues:
   - Added critters for CSS optimization
   - Fixed social media links
-
-## In Progress 🚧
 - Landing page design and implementation
 - Shows/concerts section
-- Shop integration
-- Band information section
-- Media gallery
+- Shop integration with PrestaShop:
+  - API connection and routing
+  - Secure environment setup
+  - Product sync
+  - Shopping cart functionality
+  - Checkout process
+- Performance optimizations:
+  - Dynamic imports for heavy sections
+  - Optimized image loading strategy
+  - Proper image dimensions and quality
+  - AVIF/WebP support
+  - Responsive image sizing
+  - Improved caching strategy
+  - Bundle size reduction
+  - Loading states and transitions
+  - Core Web Vitals improvements
+- Testing implementation:
+  - Unit tests with Vitest
+  - Component tests with React Testing Library
+  - E2E tests with Playwright
+  - Accessibility testing
+  - Component role testing
 
-## Planned 📋
+## In Progress 🚧
 - Contact form
 - Newsletter subscription
+- Service worker implementation
+- Error boundaries and fallbacks
+- API endpoint testing
+- Performance testing
+
+## Planned 📋
 - Blog/news section
 - Music player integration
-- Video gallery
-- Merchandise showcase
 - Tour dates calendar
 - Social media feed integration
-- Performance optimizations
-- Testing implementation
 - CI/CD pipeline setup
 - Custom domain setup
+- Memory leak prevention
+- Critical path optimization
 
 ## Future Considerations 🤔
 - Multi-language support
@@ -43,4 +64,7 @@
 - Member-only content
 - Ticket sales integration
 - Live streaming capabilities
-- Mobile app development 
+- Mobile app development
+- PWA features
+- Asset preloading strategy
+- Server-side analytics 
