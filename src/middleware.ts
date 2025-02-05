@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { pageview } from './lib/gtag';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -20,9 +21,23 @@ export function middleware(request: NextRequest) {
     });
   }
 
+  if (process.env.NODE_ENV === 'production') {
+    const url = request.nextUrl.pathname;
+    pageview(url);
+  }
+
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: '/shop/:path*',
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+  ],
 }; 
