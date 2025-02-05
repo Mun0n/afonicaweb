@@ -3,10 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useBandContext } from '../context/BandContext';
-import { SocialMedia } from '../types/band';
 import dynamic from 'next/dynamic';
-import { FaInstagram, FaFacebookF, FaYoutube, FaSpotify, FaTiktok } from 'react-icons/fa';
 
 // Dynamic imports for non-critical components
 const ShowsSection = dynamic(() => import('../components/ShowsSection'), {
@@ -20,7 +17,6 @@ const ShopSection = dynamic(() => import('../components/ShopSection'), {
 });
 
 export default function HomePage() {
-  const { socialMedia } = useBandContext();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
