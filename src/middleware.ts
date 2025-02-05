@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { pageview } from './lib/gtag';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -19,11 +18,6 @@ export function middleware(request: NextRequest) {
         headers: requestHeaders,
       },
     });
-  }
-
-  if (process.env.NODE_ENV === 'production') {
-    const url = request.nextUrl.pathname;
-    pageview(url);
   }
 
   return NextResponse.next();
