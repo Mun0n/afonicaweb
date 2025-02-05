@@ -5,7 +5,6 @@ import { BandProvider } from '../context/BandContext';
 import { defaultSEO } from '../config/seo';
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
-import { GA_MEASUREMENT_ID } from '../lib/gtag';
 import Toolbar from '../components/Toolbar';
 import { Footer } from '../components/Footer';
 
@@ -84,7 +83,7 @@ export default function RootLayout({
         <link rel="icon" href="/images/favicon/favicon.ico" />
         <meta name="theme-color" content="#000000" />
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-1V1LJGX35G`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -92,10 +91,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-              send_page_view: true
-            });
+            gtag('config', 'G-1V1LJGX35G');
           `}
         </Script>
         <script
