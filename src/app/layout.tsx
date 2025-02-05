@@ -144,8 +144,8 @@ export default function RootLayout({
           <Toolbar />
           {children}
           <Footer />
+          <Analytics />
         </BandProvider>
-        <Analytics />
       </body>
     </html>
   );
