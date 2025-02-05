@@ -39,6 +39,15 @@
   - E2E tests with Playwright
   - Accessibility testing
   - Component role testing
+- Hero section improvements:
+  - Smooth image transitions
+  - Optimized image loading
+  - Responsive design
+- Shop section enhancements:
+  - Product card animations
+  - Image flip transitions
+  - Clickable product cards
+  - Improved UX with visual feedback
 
 ## In Progress 🚧
 - Contact form

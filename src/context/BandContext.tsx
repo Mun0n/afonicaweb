@@ -1,10 +1,10 @@
 "use client";
 
-import { createContext, useContext, ReactNode, useState } from 'react';
-import type { BandContextType, RoadmapItem } from '../types/band';
-import { mockBandInfo } from '../data/mockData';
+import { createContext, useContext, ReactNode } from 'react';
+import type { BandContextType } from '@/types/band';
+import { mockBandInfo } from '@/data/mockData';
 
-const BandContext = createContext<BandContextType | null>(null);
+const BandContext = createContext<BandContextType>({} as BandContextType);
 
 export function useBandContext() {
   const context = useContext(BandContext);
@@ -15,10 +15,17 @@ export function useBandContext() {
 }
 
 export function BandProvider({ children }: { children: ReactNode }) {
-  const [roadmap] = useState<RoadmapItem[]>([]);
+  console.log('BandProvider initializing with mockData:', mockBandInfo);
+  
+  const contextValue: BandContextType = {
+    ...mockBandInfo,
+    roadmap: []
+  };
+
+  console.log('BandProvider context value:', contextValue);
 
   return (
-    <BandContext.Provider value={{ ...mockBandInfo, roadmap }}>
+    <BandContext.Provider value={contextValue}>
       {children}
     </BandContext.Provider>
   );

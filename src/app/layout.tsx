@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { BandProvider } from '../context/BandContext';
-import { defaultSEO } from '../config/seo';
+import { BandProvider } from '@/context/BandContext';
+import { defaultSEO } from '@/config/seo';
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
-import Toolbar from '../components/Toolbar';
-import { Footer } from '../components/Footer';
+import Toolbar from '@/components/Toolbar';
+import { Footer } from '@/components/Footer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,6 +74,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log('Rendering RootLayout');
   return (
     <html lang="es">
       <head>
