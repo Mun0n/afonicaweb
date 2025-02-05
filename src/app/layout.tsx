@@ -64,6 +64,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'HnqM5-7X208uMPvDlQBBsNOPhZ5ckR8sUYZNgBAE8Yk',
+    other: {
+      'google-site-verification': 'HnqM5-7X208uMPvDlQBBsNOPhZ5ckR8sUYZNgBAE8Yk'
+    }
   },
 };
 
@@ -89,7 +92,10 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+              send_page_view: true
+            });
           `}
         </Script>
         <script
