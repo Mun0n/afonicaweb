@@ -48,11 +48,14 @@
   - Image flip transitions
   - Clickable product cards
   - Improved UX with visual feedback
+- Production deployment:
+  - Vercel setup and configuration
+  - Automatic deployments from main branch
+  - Production environment variables
 
 ## In Progress 🚧
 - Contact form
 - Newsletter subscription
-- Service worker implementation
 - Error boundaries and fallbacks
 - API endpoint testing
 - Performance testing
@@ -66,6 +69,7 @@
 - Custom domain setup
 - Memory leak prevention
 - Critical path optimization
+- Service worker implementation
 
 ## Future Considerations 🤔
 - Multi-language support
