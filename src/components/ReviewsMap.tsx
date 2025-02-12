@@ -7,15 +7,13 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useEffect } from 'react';
 
-// Custom orange marker icon
-const icon = L.divIcon({
-  className: 'custom-marker',
-  html: `<svg width="25" height="41" viewBox="0 0 25 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12.5 0C5.59644 0 0 5.59644 0 12.5C0 21.875 12.5 41 12.5 41C12.5 41 25 21.875 25 12.5C25 5.59644 19.4036 0 12.5 0ZM12.5 17C10.0147 17 8 14.9853 8 12.5C8 10.0147 10.0147 8 12.5 8C14.9853 8 17 10.0147 17 12.5C17 14.9853 14.9853 17 12.5 17Z" fill="#FF5733"/>
-  </svg>`,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
+// Custom marker icon using favicon
+const icon = L.icon({
+  iconUrl: '/images/favicon/favicon-32x32.png',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
+  className: 'custom-marker'
 });
 
 // Function to extract coordinates from Google Maps URL
@@ -81,6 +79,9 @@ function ZoomControl() {
 const styles = `
   .custom-marker {
     filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+  }
+  .custom-marker img {
+    border-radius: 50%;
   }
 `;
 
