@@ -1,12 +1,12 @@
 "use client";
 
 import { Suspense } from 'react';
-import { useBandContext } from '../context/BandContext';
+import { useBand } from '../context/BandContext';
 import ProductCard from './ProductCard';
 import { ProductGridSkeleton } from './skeletons/ProductSkeleton';
 
 export default function ShopSection() {
-  const { products } = useBandContext();
+  const { products } = useBand();
 
   console.log('ShopSection render:', JSON.stringify(products, null, 2));
 

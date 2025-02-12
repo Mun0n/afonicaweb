@@ -21,6 +21,16 @@ export interface RoadmapItem {
   status: 'completed' | 'pending' | 'in-progress';
 }
 
+export interface Review {
+  businessName: string;
+  businessUrl: string;
+  rating: number;
+  content: string;
+  date: string;
+  location: string;
+  reviewUrl?: string;
+}
+
 export interface BandInfo {
   name: string;
   bio: string;
@@ -31,4 +41,5 @@ export interface BandInfo {
 
 export interface BandContextType extends BandInfo {
   roadmap: RoadmapItem[];
+  reviews: Review[];
 } 

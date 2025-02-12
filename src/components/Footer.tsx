@@ -1,11 +1,11 @@
 'use client';
 
 import { FaInstagram, FaFacebookF, FaYoutube, FaSpotify, FaTiktok } from 'react-icons/fa';
-import { useBandContext } from '../context/BandContext';
+import { useBand } from '../context/BandContext';
 import type { SocialMedia } from '../types/band';
 
 export function Footer() {
-  const { socialMedia } = useBandContext();
+  const { socialMedia } = useBand();
   return (
     <footer role="contentinfo" className="py-8 px-4 bg-black">
       <div className="container mx-auto flex flex-col items-center">

@@ -4,11 +4,17 @@ import { useBand } from '@/context/BandContext';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { Review } from '@/types/band';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 
 const formatDate = (dateString: string) => {
   const [year, month, day] = dateString.split('-');
   return `${day}-${month}-${year}`;
 };
+
+const ReviewsMap = dynamic(() => import('./ReviewsMap'), {
+  ssr: false,
+  loading: () => <div className="w-full h-[500px] bg-zinc-900 rounded-lg animate-pulse" />
+});
 
 export default function RecommendationsSection() {
   const { reviews } = useBand();
@@ -73,6 +79,10 @@ export default function RecommendationsSection() {
               </a>
             );
           })}
+        </div>
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold text-center mb-8 text-white">Mapa de recomendaciones</h3>
+          <ReviewsMap />
         </div>
       </div>
     </section>

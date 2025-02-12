@@ -21,6 +21,15 @@ export function BandProvider({ children }: { children: ReactNode }) {
     ...mockBandInfo,
     reviews: [
       {
+        businessName: "La Noguera de Pozoseco",
+        businessUrl: "https://maps.app.goo.gl/CcZKCxaRqTprSMEJA",
+        rating: 5,
+        content: "Parada técnica de Madrid a Valencia buscando café y agua con ibuprofeno para la mitad de los miembros de la banda.\n\nSin esperarlo, habíamos parado en la cafetería más fancy de la A3. Diseño interior agradable, atención rápida y correcta y visita táctica a unos baños que resultaron ser amplios, abundantes y agradablemente limpios. Como era el viaje de ida, sólo se utilizaron para hacer aguas menores. Si los pillamos en el viaje de vuelta, nos tienen que empadronar allí.\n\nSecador de manos marca DYSON, que siempre garantiza un secado completo de las manos en un ridículo lapso de tiempo. Para nosotros, DYSON siempre es la mejor opción en el segmento de los secadores de manos.\n\nNo hubo repostaje de carburante, aunque se hizo uso de la manguera de agua para llenar el depósito del limpiaparabrisas. No podemos evaluar la calidad de la misma ya que no hizo falta activar los limpiaparabrisas, pero la impresión general fue de gran calidad acuática (y venimos de Madrid, donde todos sus habitantes somos malditos sumilleres de agua).\n\nGran experiencia. Volveremos a parar en futuros viajes.",
+        date: "2025-02-09",
+        location: "Autovía del Este, Km. 207, 16212 Pozoseco, Cuenca",
+        reviewUrl: "https://maps.app.goo.gl/uWpHZhLddgq6Hh7r7"
+      },
+      {
         businessName: "Restaurante La Nova Terreta",
         businessUrl: "https://maps.app.goo.gl/YGUdbxMNdG1NNoVD9",
         rating: 5,

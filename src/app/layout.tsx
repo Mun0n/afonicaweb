@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 import Toolbar from '@/components/Toolbar';
 import { Footer } from '@/components/Footer';
+import 'leaflet/dist/leaflet.css';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,6 +83,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
         <link rel="icon" href="/images/favicon/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=G-1V1LJGX35G`}

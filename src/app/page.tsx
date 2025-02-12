@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import { useBandContext } from '@/context/BandContext';
+import { useBand } from '@/context/BandContext';
 
 // Dynamic imports for non-critical components
 const ShowsSection = dynamic(() => import('@/components/ShowsSection'), {
@@ -21,11 +21,16 @@ const ReviewsSection = dynamic(() => import('@/components/ReviewsSection'), {
   loading: () => <div className="h-96 bg-gradient-to-b from-black to-gray-900" />
 });
 
+const RecommendationsSection = dynamic(() => import('@/components/RecommendationsSection'), {
+  ssr: false,
+  loading: () => <div className="h-96 bg-gradient-to-b from-black to-gray-900" />
+});
+
 export default function HomePage() {
   const [mounted, setMounted] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const { bio, products, photos } = useBandContext();
+  const { bio, products, photos } = useBand();
 
   useEffect(() => {
     setMounted(true);
@@ -123,6 +128,9 @@ export default function HomePage() {
           </div>
           <div id="reviews-section">
             <ReviewsSection />
+          </div>
+          <div id="recomendaciones-section">
+            <RecommendationsSection />
           </div>
         </>
       )}

@@ -65,6 +65,9 @@ const Toolbar = () => {
         <Link href="/#reviews" className="text-white hover:text-[#FF0000] transition-colors font-medium">
           Reviews
         </Link>
+        <Link href="/#recomendaciones" className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          Recomendaciones
+        </Link>
         <Link href="/contacto" className="text-white hover:text-[#FF0000] transition-colors font-medium">
           Contacto
         </Link>
