@@ -19,7 +19,38 @@ export function BandProvider({ children }: { children: ReactNode }) {
   
   const contextValue: BandContextType = {
     ...mockBandInfo,
-    roadmap: []
+    roadmap: [
+      {
+        title: "Lanzamiento inicial",
+        description: "Primera versión de la web con información básica y diseño responsive",
+        status: "completed"
+      },
+      {
+        title: "Integración de tienda",
+        description: "Añadida sección de tienda con productos y conexión a PrestaShop",
+        status: "completed"
+      },
+      {
+        title: "Sección de reviews",
+        description: "Añadida sección de opiniones de fans y testimonios",
+        status: "completed"
+      },
+      {
+        title: "Tour 2025",
+        description: "Integración del poster de la gira y widget de Bandsintown",
+        status: "completed"
+      },
+      {
+        title: "Galería de fotos",
+        description: "Sección dedicada a fotos de conciertos y backstage",
+        status: "pending"
+      },
+      {
+        title: "Blog del grupo",
+        description: "Blog con noticias y actualizaciones de la banda",
+        status: "pending"
+      }
+    ]
   };
 
   console.log('BandProvider context value:', contextValue);
