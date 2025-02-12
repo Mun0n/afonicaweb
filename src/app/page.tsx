@@ -16,6 +16,11 @@ const ShopSection = dynamic(() => import('@/components/ShopSection'), {
   loading: () => <div className="h-96 bg-gradient-to-b from-black to-gray-900" />
 });
 
+const ReviewsSection = dynamic(() => import('@/components/ReviewsSection'), {
+  ssr: false,
+  loading: () => <div className="h-96 bg-gradient-to-b from-black to-gray-900" />
+});
+
 export default function HomePage() {
   const [mounted, setMounted] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -115,6 +120,9 @@ export default function HomePage() {
           </div>
           <div id="shop-section">
             {products && products.length > 0 && <ShopSection />}
+          </div>
+          <div id="reviews-section">
+            <ReviewsSection />
           </div>
         </>
       )}
