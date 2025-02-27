@@ -12,6 +12,8 @@
   - Social media links with brand colors and correct URLs
   - Section navigation with smooth scrolling
   - Fixed positioning and responsive design
+  - Mobile-friendly hamburger menu
+  - Full-screen mobile navigation overlay
 - Fixed deployment issues:
   - Added critters for CSS optimization
   - Fixed social media links
