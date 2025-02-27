@@ -33,7 +33,11 @@ export interface Review {
 
 export interface BandInfo {
   name: string;
-  bio: string;
+  bio: {
+    main: string;
+    sub: string;
+    small: string;
+  };
   photos: string[];
   products: Product[];
   socialMedia: SocialMedia[];

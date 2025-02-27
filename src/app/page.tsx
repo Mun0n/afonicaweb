@@ -108,7 +108,9 @@ export default function HomePage() {
         </div>
         <div className="pt-0 rounded-lg w-full max-w-4xl mx-auto mb-16">
           <p className="text-xl md:text-2xl text-white text-center font-light [text-shadow:_0_1px_12px_rgb(0_0_0_/_90%)]">
-            {bio}
+            <span className="block italic mb-4 text-2xl md:text-4xl font-bold">{bio.main}</span>
+            <span className="block mb-2">{bio.sub}</span>
+            <span className="block text-lg md:text-xl opacity-80">{bio.small}</span>
           </p>
         </div>
       </div>

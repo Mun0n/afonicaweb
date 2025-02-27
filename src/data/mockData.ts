@@ -2,7 +2,11 @@ import { BandInfo } from '@/types/band';
 
 export const mockBandInfo: BandInfo = {
   name: "Afónica Naranjo",
-  bio: "Afónica Naranjo transforma los grandes éxitos en explosiones de punk y hardcore. La hardcorquesta de pueblo que une a la tía Amparo con el punki del pueblo.",
+  bio: {
+    main: "¡La HARDCORquesta ya ha llegado!",
+    sub: 'Versiones punk-rock-HxC de esas canciones pachangueras "que-todo-el-mundo-se-sabe"',
+    small: "(sí, los punkis también)"
+  },
   photos: [
     '/images/hero/hero-1.webp',
     '/images/hero/hero-2.webp',
