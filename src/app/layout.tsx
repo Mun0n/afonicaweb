@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script';
 import 'leaflet/dist/leaflet.css';
@@ -6,14 +6,10 @@ import { defaultSEO } from '@/config/seo';
 import ClientLayout from '@/components/ClientLayout';
 export { metadata } from './metadata';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -24,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-16 bg-black`}
+        className={`${inter.variable} antialiased pt-16 bg-black`}
       >
         <ClientLayout>
           {children}

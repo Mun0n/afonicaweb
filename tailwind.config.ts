@@ -8,10 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+      },
       colors: {
         brand: {
           orange: "#FF5733",
-          white: "#F5F5F5",
+          white: "#FFFFFF",
         },
         background: "var(--background)",
         foreground: "var(--foreground)",
