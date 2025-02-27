@@ -14,6 +14,11 @@
   - Fixed positioning and responsive design
   - Mobile-friendly hamburger menu
   - Full-screen mobile navigation overlay
+  - Improved navigation handling:
+    - Smooth scrolling for section links
+    - Proper mobile menu state management
+    - Enhanced navigation between pages
+    - Fixed scroll restoration
 - Fixed deployment issues:
   - Added critters for CSS optimization
   - Fixed social media links

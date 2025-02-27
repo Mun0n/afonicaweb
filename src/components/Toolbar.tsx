@@ -1,22 +1,44 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import { FaInstagram, FaFacebook, FaYoutube, FaSpotify, FaBars, FaTimes } from 'react-icons/fa';
 
 const Toolbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const toggleMenu = () => {
+  const toggleMenu = useCallback(() => {
     setIsMenuOpen(!isMenuOpen);
-    // Prevent scrolling when menu is open
     document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
-  };
+  }, [isMenuOpen]);
+
+  const handleNavigation = useCallback((path: string) => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'auto';
+      setIsMenuOpen(false);
+    }
+    
+    if (pathname === '/' && path === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (pathname === '/' && path.startsWith('/#')) {
+      const element = document.querySelector(path.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      router.push(path);
+    }
+  }, [isMenuOpen, pathname, router]);
 
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 h-16 bg-black z-50 flex items-center justify-between px-4 md:px-8 border-b border-zinc-800">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center">
+          <button onClick={() => handleNavigation('/')} className="flex items-center">
             <Image
               src="/images/favicon/favicon-32x32.png"
               alt="Afónica Naranjo"
@@ -25,7 +47,7 @@ const Toolbar = () => {
               className="w-8 h-8"
               priority
             />
-          </Link>
+          </button>
           <div className="hidden md:flex items-center gap-4">
             <a
               href="https://instagram.com/afonicanaranjo"
@@ -64,24 +86,24 @@ const Toolbar = () => {
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          <button onClick={() => handleNavigation('/')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Inicio
-          </Link>
-          <Link href="/#bandsintown-widget" className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          </button>
+          <button onClick={() => handleNavigation('/#bandsintown-widget')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Conciertos
-          </Link>
-          <Link href="/#tienda" className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          </button>
+          <button onClick={() => handleNavigation('/#tienda')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Tienda
-          </Link>
-          <Link href="/#reviews" className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          </button>
+          <button onClick={() => handleNavigation('/#reviews')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Reviews
-          </Link>
-          <Link href="/#recomendaciones" className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          </button>
+          <button onClick={() => handleNavigation('/#recomendaciones')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Recomendaciones
-          </Link>
-          <Link href="/contacto" className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          </button>
+          <button onClick={() => handleNavigation('/contacto')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Contacto
-          </Link>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -102,48 +124,42 @@ const Toolbar = () => {
         style={{ top: '64px' }}
       >
         <div className="flex flex-col items-center justify-start pt-8 space-y-6">
-          <Link
-            href="/"
+          <button
+            onClick={() => handleNavigation('/')}
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
-            onClick={toggleMenu}
           >
             Inicio
-          </Link>
-          <Link
-            href="/#bandsintown-widget"
+          </button>
+          <button
+            onClick={() => handleNavigation('/#bandsintown-widget')}
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
-            onClick={toggleMenu}
           >
             Conciertos
-          </Link>
-          <Link
-            href="/#tienda"
+          </button>
+          <button
+            onClick={() => handleNavigation('/#tienda')}
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
-            onClick={toggleMenu}
           >
             Tienda
-          </Link>
-          <Link
-            href="/#reviews"
+          </button>
+          <button
+            onClick={() => handleNavigation('/#reviews')}
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
-            onClick={toggleMenu}
           >
             Reviews
-          </Link>
-          <Link
-            href="/#recomendaciones"
+          </button>
+          <button
+            onClick={() => handleNavigation('/#recomendaciones')}
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
-            onClick={toggleMenu}
           >
             Recomendaciones
-          </Link>
-          <Link
-            href="/contacto"
+          </button>
+          <button
+            onClick={() => handleNavigation('/contacto')}
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
-            onClick={toggleMenu}
           >
             Contacto
-          </Link>
+          </button>
 
           {/* Mobile Social Icons */}
           <div className="flex items-center gap-6 mt-8">
