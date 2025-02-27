@@ -56,7 +56,7 @@ export default function ContactPage() {
                       <span className="text-3xl md:text-4xl">💌</span> ¿Quieres contratarnos?
                     </h2>
                     <p className="text-base md:text-lg text-gray-300 group-hover:text-white transition-colors mb-4">
-                      ¿Quieres caña en tu fiesta, festival o boda punk-rockera?<br />
+                      ¿Quieres añadir un toque diferente al cartel de tu festival? ¿Quieres unas fiestas de San Onofre memorables?<br />
                       👉 Para cosas serias (más o menos), contacta con:
                     </p>
                     <p className="text-lg md:text-xl font-bold text-brand-orange group-hover:text-white transition-colors">
