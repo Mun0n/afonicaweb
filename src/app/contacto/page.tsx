@@ -149,8 +149,7 @@ export default function ContactPage() {
             className="italic text-center mt-8 md:mt-12 text-lg md:text-xl text-gray-300"
             variants={item}
           >
-            🎆 P.D. Si nos escribes a las 5 AM borrachx diciendo que somos la mejor banda de la historia, 
-            te vamos a querer para siempre. 💛🔥
+            P.D. Si nos escribes a las 5 AM diciendo que somos la mejor banda de la historia, tendremos en cuenta que no estabas en tu mejor momento 🫣. Pero te querremos igual, o más 💜🖤♥️
           </motion.p>
 
           <motion.p 
