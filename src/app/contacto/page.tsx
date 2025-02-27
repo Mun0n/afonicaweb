@@ -41,7 +41,7 @@ export default function ContactPage() {
             className="text-lg md:text-xl text-center text-gray-300 max-w-2xl mx-auto mb-8 md:mb-12"
             variants={item}
           >
-            Si has llegado hasta aquí porque te han hablado de nosotros, porque nos viste en algún festival, o simplemente te has perdido por internet buscando en Google "estoy afónica y mañana es mi boda"… ¡BIENVENIDx! 🎉
+            {`Si has llegado hasta aquí porque te han hablado de nosotros, porque nos viste en algún festival, o simplemente te has perdido por internet buscando en Google "estoy afónica y mañana es mi boda"… ¡BIENVENIDx! 🎉`}
           </motion.p>
 
           <div className="mb-8 md:mb-12">
@@ -84,8 +84,9 @@ export default function ContactPage() {
                   <span className="text-3xl md:text-4xl">📨</span> ¿Quieres escribirnos?
                 </h2>
                 <p className="text-base md:text-lg text-gray-300 group-hover:text-white transition-colors mb-4">
-                  ¿Quieres enviarnos amor, odio o la receta de cómo hacéis el gazpacho en vuestra casa?<br />
-                  ¡Escríbenos! Nos gustan los emails con propuestas, memes y GIFs de gatitos.
+                  {`¿Quieres enviarnos amor, odio o la receta de cómo hacéis el gazpacho en vuestra casa?`}
+                  <br />
+                  {`¡Escríbenos! Nos gustan los emails con propuestas, memes y GIFs de gatitos.`}
                 </p>
                 <p className="text-lg md:text-xl font-bold text-brand-orange group-hover:text-white transition-colors">
                   📧 afonicanaranjo@gmail.com
@@ -103,7 +104,7 @@ export default function ContactPage() {
                 <span className="text-3xl md:text-4xl">📲</span> Redes Sociales
               </h2>
               <p className="text-base md:text-lg text-gray-300 mb-6">
-                Síguenos, mándanos DMs o etiquétanos en tus stories y no te pierdas la capacidad que tenemos de mostrarle al mundo lo idiotas que podemos llegar a ser. Ojo, a veces también hacemos cosas serias, eh? 😉
+                {`Síguenos, mándanos DMs o etiquétanos en tus stories y no te pierdas la capacidad que tenemos de mostrarle al mundo lo idiotas que podemos llegar a ser. Ojo, a veces también hacemos cosas serias, eh? 😉`}
               </p>
               <div className="flex flex-wrap justify-center gap-6 md:gap-8 mt-6">
                 <Link 
@@ -149,14 +150,14 @@ export default function ContactPage() {
             className="italic text-center mt-8 md:mt-12 text-lg md:text-xl text-gray-300"
             variants={item}
           >
-            P.D. Si nos escribes a las 5 AM diciendo que somos la mejor banda de la historia, tendremos en cuenta que no estabas en tu mejor momento 🫣. Pero te querremos igual, o más 💜🖤♥️
+            {`P.D. Si nos escribes a las 5 AM diciendo que somos la mejor banda de la historia, tendremos en cuenta que no estabas en tu mejor momento 🫣. Pero te querremos igual, o más 💜🖤♥️`}
           </motion.p>
 
           <motion.p 
             className="text-center mt-6 md:mt-8 text-xs md:text-sm text-gray-500"
             variants={item}
           >
-            Sitio web creado con 🧡 por Mun0n
+            {`Sitio web creado con 🧡 por Mun0n`}
           </motion.p>
         </div>
       </motion.div>
