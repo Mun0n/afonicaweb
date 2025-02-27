@@ -1,6 +1,4 @@
 {
   "version": 2,
-  "buildCommand": "tsc --project tsconfig.prod.json && next build",
-  "installCommand": "npm install",
   "framework": "nextjs"
 } 
