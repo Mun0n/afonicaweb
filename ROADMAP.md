@@ -16,13 +16,17 @@
   - Added critters for CSS optimization
   - Fixed social media links
 - Landing page design and implementation
-- Shows/concerts section
+- Shows/concerts section:
+  - BandsInTown widget integration
+  - Spanish translation of widget texts
+  - Tour poster display
 - Shop integration with PrestaShop:
   - API connection and routing
   - Secure environment setup
   - Product sync
   - Shopping cart functionality
   - Checkout process
+  - Updated product pricing display
 - Performance optimizations:
   - Dynamic imports for heavy sections
   - Optimized image loading strategy
