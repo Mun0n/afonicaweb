@@ -91,7 +91,7 @@ export default function ProductCard({ name, description, price, images, prestash
           <h3 className="text-lg md:text-xl font-bold text-white mb-2">{name}</h3>
           <p className="text-gray-300 text-sm md:text-base mb-4">{description}</p>
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-            <span className="text-lg md:text-xl font-bold text-white">{price.toFixed(2)}€</span>
+            <span className="text-lg md:text-xl font-bold text-white">15€ + gastos de envío</span>
             <span
               className="bg-brand-orange text-brand-white px-4 py-2.5 rounded-full font-medium hover:opacity-90 transition-colors text-sm md:text-base w-full md:w-auto text-center"
             >

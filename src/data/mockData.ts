@@ -22,7 +22,7 @@ export const mockBandInfo: BandInfo = {
       id: 'tshirt-amaia',
       name: 'Camiseta Amaia',
       description: 'Camiseta negra 100% algodón. Logo de la banda en el pecho y diseño tributo a Amaia en la espalda.',
-      price: 19.99,
+      price: 15,
       images: {
         front: '/images/products/tshirt-front.webp',
         back: '/images/products/tshirt-amaia-back.webp'
@@ -33,7 +33,7 @@ export const mockBandInfo: BandInfo = {
       id: 'tshirt-chayanne',
       name: 'Camiseta Chayanne',
       description: 'Camiseta negra 100% algodón. Logo de la banda en el pecho y diseño tributo a Chayanne en la espalda.',
-      price: 19.99,
+      price: 15,
       images: {
         front: '/images/products/tshirt-front.webp',
         back: '/images/products/tshirt-chayanne-back.webp'
