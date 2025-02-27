@@ -88,6 +88,16 @@ const styles = `
 export default function ReviewsMap() {
   const { reviews } = useBand();
 
+  // Add styles to head
+  useEffect(() => {
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = styles;
+    document.head.appendChild(styleSheet);
+    return () => {
+      document.head.removeChild(styleSheet);
+    };
+  }, []);
+
   if (!reviews?.length) {
     console.log('No reviews available');
     return null;
@@ -115,16 +125,6 @@ export default function ReviewsMap() {
     (minLat + maxLat) / 2,
     (minLng + maxLng) / 2
   ];
-
-  // Add styles to head
-  useEffect(() => {
-    const styleSheet = document.createElement("style");
-    styleSheet.innerText = styles;
-    document.head.appendChild(styleSheet);
-    return () => {
-      document.head.removeChild(styleSheet);
-    };
-  }, []);
 
   return (
     <div style={{ width: '100%', height: '500px', position: 'relative' }}>
