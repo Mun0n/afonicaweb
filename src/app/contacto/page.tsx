@@ -103,9 +103,7 @@ export default function ContactPage() {
                 <span className="text-3xl md:text-4xl">📲</span> Redes Sociales
               </h2>
               <p className="text-base md:text-lg text-gray-300 mb-6">
-                Nos encontrarás haciendo el gamberro en nuestras redes sociales. 
-                Dale follow, mándanos un mensaje o etiquétanos en tus stories cantando 
-                nuestras canciones (o berreando, lo que salga).
+                Síguenos, mándanos DMs o etiquétanos en tus stories y no te pierdas la capacidad que tenemos de mostrarle al mundo lo idiotas que podemos llegar a ser. Ojo, a veces también hacemos cosas serias, eh? 😉
               </p>
               <div className="flex flex-wrap justify-center gap-6 md:gap-8 mt-6">
                 <Link 
