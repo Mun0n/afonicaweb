@@ -1,6 +1,6 @@
 {
-  "buildCommand": "SKIP_TESTS=true SKIP_TYPE_CHECK=true next build",
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ':(exclude)test' ':(exclude)*.test.*' ':(exclude)vitest.config.*'",
+  "version": 2,
+  "buildCommand": "tsc --project tsconfig.prod.json && next build",
   "installCommand": "npm install",
   "framework": "nextjs"
 } 
