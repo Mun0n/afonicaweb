@@ -84,7 +84,7 @@ export default function ContactPage() {
                   <span className="text-3xl md:text-4xl">📨</span> ¿Quieres escribirnos?
                 </h2>
                 <p className="text-base md:text-lg text-gray-300 group-hover:text-white transition-colors mb-4">
-                  ¿Quieres enviarnos amor, odio o recetas de tinto de verano?<br />
+                  ¿Quieres enviarnos amor, odio o la receta de cómo hacéis el gazpacho en vuestra casa?<br />
                   ¡Escríbenos! Nos gustan los emails con propuestas, memes y GIFs de gatitos.
                 </p>
                 <p className="text-lg md:text-xl font-bold text-brand-orange group-hover:text-white transition-colors">
