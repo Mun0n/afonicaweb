@@ -41,9 +41,7 @@ export default function ContactPage() {
             className="text-lg md:text-xl text-center text-gray-300 max-w-2xl mx-auto mb-8 md:mb-12"
             variants={item}
           >
-            Si has llegado hasta aquí, o te han hablado de nosotros, o nos viste en alguna verbena, 
-            o simplemente te has perdido por internet buscando cómo hacer calimocho sin que sepa a rayos. 
-            Sea como sea… ¡BIENVENIDO! 🎉
+            Si has llegado hasta aquí porque te han hablado de nosotros, porque nos viste en algún festival, o simplemente te has perdido por internet buscando en Google "estoy afónica y mañana es mi boda"… ¡BIENVENIDx! 🎉
           </motion.p>
 
           <div className="mb-8 md:mb-12">
