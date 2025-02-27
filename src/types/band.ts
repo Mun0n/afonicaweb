@@ -41,6 +41,7 @@ export interface BandInfo {
   photos: string[];
   products: Product[];
   socialMedia: SocialMedia[];
+  roadmap: RoadmapItem[];
 }
 
 export interface BandContextType extends BandInfo {
