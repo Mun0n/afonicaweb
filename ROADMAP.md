@@ -19,6 +19,7 @@
     - Proper mobile menu state management
     - Enhanced navigation between pages
     - Fixed scroll restoration
+  - Social media icons always visible in toolbar
 - Fixed deployment issues:
   - Added critters for CSS optimization
   - Fixed social media links
