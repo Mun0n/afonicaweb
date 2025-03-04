@@ -1,5 +1,9 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { defaultSEO } from '@/config/seo';
+
+export const viewport: Viewport = {
+  themeColor: '#000000',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://afonicanaranjo.com'),
@@ -8,14 +12,23 @@ export const metadata: Metadata = {
   keywords: ['punk rock', 'hardcore', 'versiones', 'banda', 'madrid', 'música en directo', 'conciertos'],
   authors: [{ name: defaultSEO.additionalMetaTags[1].content }],
   icons: {
-    icon: [
-      { url: '/images/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/images/favicon/favicon.ico' }
+    icon: '/images/favicon/favicon.ico',
+    shortcut: '/images/favicon/favicon.ico',
+    apple: '/images/favicon/apple-touch-icon.png',
+    other: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        url: '/images/favicon/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        url: '/images/favicon/favicon-16x16.png',
+      },
     ],
-    apple: [
-      { url: '/images/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
-    ]
   },
   manifest: '/site.webmanifest',
   themeColor: '#000000',

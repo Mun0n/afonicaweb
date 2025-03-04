@@ -39,6 +39,10 @@
   - Refined booking and contact texts
   - Enhanced social media section copy
   - Updated postscript message
+  - Improved email buttons and card interactions
+  - Responsive design for all sections
+  - Clickable cards with mailto actions
+  - Better spacing and typography
 - Performance optimizations:
   - Dynamic imports for heavy sections
   - Optimized image loading strategy
