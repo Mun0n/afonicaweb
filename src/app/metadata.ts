@@ -31,7 +31,6 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
-  themeColor: '#000000',
   openGraph: {
     title: 'Afónica Naranjo | Banda de Versiones Punk-Rock-HxC',
     description: 'Afónica Naranjo transforma los grandes éxitos en explosiones de punk y hardcore. La hardcorquesta de pueblo que une a la tía Amparo con el punki del pueblo.',
