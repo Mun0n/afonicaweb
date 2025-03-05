@@ -1,4 +1,11 @@
 {
   "version": 2,
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "regions": ["cdg1"],
+  "github": {
+    "enabled": true,
+    "silent": true
+  }
 } 
