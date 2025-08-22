@@ -23,7 +23,9 @@ const getCoordinatesFromUrl = (url: string, businessName: string) => {
   // Hardcoded coordinates for known locations
   const knownLocations: Record<string, [number, number]> = {
     'La Nova Terreta': [39.4574, -0.4614],
-    'La Noguera de Pozoseco': [39.5697, -2.3672]
+    'La Noguera de Pozoseco': [39.5697, -2.3672],
+    'Casa Rural El Patio': [38.7756, -4.8319],
+    'Hotel Restaurante Nico': [41.1719, -2.4347]
   };
 
   if (knownLocations[businessName]) {

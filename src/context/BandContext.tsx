@@ -45,6 +45,24 @@ Por último, sugerir que se inicie una consulta popular en Alaquàs para que a t
         date: "2025-02-08",
         location: "Carrer de les Palmeres, 6, 46970 Alaquàs, Valencia",
         reviewUrl: "https://goo.gl/maps/9pwH8i7Jm8S3BAhw8?g_st=atm"
+      },
+      {
+        businessName: "Casa Rural El Patio",
+        businessUrl: "https://maps.app.goo.gl/qDV65WLaD3zKvU6k8",
+        rating: 5,
+        content: "Teníamos actuación en Alamillo así que necesitábamos un sitio cercano y económico para darnos una ducha y dormir esa noche.\n\nEl alojamiento disponía de todos los elementos necesarios para ese cometido, ya que tenía ducha (dos) y camas (tres). Además contenía los accesorios auxiliares más habituales como son sábanas, toallas, agua corriente (fría y caliente), inodoro (dos) y paredes alicatadas.\n\nAdemás había microondas y nevera, aunque no hicimos uso de ninguno de esos electrodomésticos ya que no teníamos nada que microondear ni que neverear.\n\nEl check-in y el check-out fueron rápidos y sin ningún tipo de problema.\n\nEn definitiva, una estancia perfecta. Le ponemos 5 estrellas, una por cada hora que hemos dormido.",
+        date: "2025-08-20",
+        location: "C. Mayor, 10, 13400 Almadén, Ciudad Real",
+        reviewUrl: "https://maps.app.goo.gl/74E2fUAbvT2JMFKU6"
+      },
+      {
+        businessName: "Hotel Restaurante Nico",
+        businessUrl: "https://maps.app.goo.gl/ekA8XTZD1p12PFFS7",
+        rating: 5,
+        content: "La abundancia de banderas de España puede dificultar, en primera instancia, la identificación del menú disponible, aunque finalmente nos orientamos y descubrimos que era abundante y variado: torreznos sueltos, bocadillo de torreznos, ensaladilla de torreznos, tortilla de torreznos y, de postre, chocorreznos y polvorreznos. Para beber, Fanta de torrezno o Torreznocola.\n\nComo es habitual, preguntamos por alternativas vegetarianas (dos de nosotros lo somos) y la principal opción era un vaso de gazpacho. Ante la sospecha de que pudiera contener trazas de torrezno o de que los tomates utilizados hubieran podido oír los chillidos de los cerdos en su camino al matadero antes de, inevitablemente, ser convertidos en torreznos, los dos vegetarianos descartaron la opción y salieron a la puerta en busca de un árbol al que abrazar. Se llevaron un golpe de realidad al comprobar que estaban en mitad de la meseta soriana y era todo un secarral.\n\nLos lavabos estaban bien, aunque el secador de manos no era Dyson.\n\nEl servicio fue rápido, amable e incluso encantador.",
+        date: "2025-08-16",
+        location: "N-II, Km. 151, 42240 Medinaceli, Soria",
+        reviewUrl: "https://maps.app.goo.gl/LF8gNVk75a5zguQB6"
       }
     ],
     roadmap: [
