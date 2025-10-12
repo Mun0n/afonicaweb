@@ -22,10 +22,16 @@ const getCoordinatesFromUrl = (url: string, businessName: string) => {
   
   // Hardcoded coordinates for known locations
   const knownLocations: Record<string, [number, number]> = {
-    'La Nova Terreta': [39.4574, -0.4614],
-    'La Noguera de Pozoseco': [39.5697, -2.3672],
     'Casa Rural El Patio': [38.7756, -4.8319],
-    'Hotel Restaurante Nico': [41.1719, -2.4347]
+    'Hotel Restaurante Nico': [41.1719, -2.4347],
+    'Restaurante La Nova Terreta': [39.4574, -0.4614],
+    'Restaurante Etoile': [42.4206, -3.1894],
+    'Hotel/Restaurante Bidean': [42.6719, -1.8131],
+    'Galp': [42.4206, -3.1894],
+    'Planta Tratamiento Purines Almazan': [41.4867, -2.5300],
+    'Piscina municipal': [39.6500, -5.6500],
+    'Gasolinera La Valenti': [41.4867, -2.5300],
+    'La Noguera de Pozoseco': [39.5697, -2.3672]
   };
 
   if (knownLocations[businessName]) {

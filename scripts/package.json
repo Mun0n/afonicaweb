@@ -1,0 +1,12 @@
+{
+  "name": "afonicaweb-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for scraping Google Reviews and updating the band website",
+  "main": "index.js",
+  "scripts": {
+    "update": "node update-band-context.js",
+    "manual": "node manual-review-entry.js",
+    "interactive": "node interactive-review-entry.js"
+  },
+  "dependencies": {}
+}
