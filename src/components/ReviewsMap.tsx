@@ -27,7 +27,7 @@ const getCoordinatesFromUrl = (url: string, businessName: string) => {
     'Restaurante La Nova Terreta': [39.4574, -0.4614],
     'Restaurante Etoile': [42.420863, -3.1904702],
     'Hotel/Restaurante Bidean': [42.6719, -1.8131],
-    'Galp': [42.4200, -3.1900],
+    'Galp': [42.2458, -3.70345],
     'Planta Tratamiento Purines Almazan': [41.5052231, -2.4988371],
     'Piscina municipal': [39.6500, -5.6500],
     'Gasolinera La Valenti': [41.4880, -2.5310],
