@@ -25,13 +25,13 @@ export default function ContactPage() {
           </div>
 
           {/* Booking contact */}
-          <Link href="mailto:contratacion@nebularproducciones.com" className="block">
+          <Link href="mailto:afonicanaranjo@asaltosonoro.com" className="block">
             <div className="bg-zinc-900 p-6 md:p-8 rounded-lg border border-zinc-800/50 hover:border-brand-orange/50 transition-all duration-300 group relative overflow-hidden">
               {/* Background image with gradient overlays */}
-              <div className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity">
+              <div className="absolute inset-0 opacity-50 group-hover:opacity-60 transition-opacity">
                 <div className="absolute inset-0 bg-[url('/images/logo-contact.webp')] bg-cover bg-center" />
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/20 via-purple-500/20 to-brand-orange/20 animate-gradient-x" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black" />
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/30 via-purple-500/30 to-brand-orange/30 animate-gradient-x" />
               </div>
               
               <div className="relative">
@@ -42,7 +42,7 @@ export default function ContactPage() {
                   ¿Quieres añadir un toque diferente al cartel de tu festival? ¿Quieres unas fiestas de San Onofre memorables?
                 </p>
                 <div className="text-sm sm:text-base md:text-lg text-brand-orange text-center break-all group-hover:text-white transition-colors">
-                  contratacion@nebularproducciones.com
+                  afonicanaranjo@asaltosonoro.com
                 </div>
               </div>
             </div>
