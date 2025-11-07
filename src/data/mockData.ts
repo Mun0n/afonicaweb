@@ -43,7 +43,7 @@ export const mockBandInfo: BandInfo = {
     {
       id: 'tshirt-andy-lucas',
       name: 'MAKE ANDY GREAT AGAIN – Camiseta Afónica Naranjo edición #TeamAndy',
-      description: 'Edición especial de la camiseta Afónica Naranjo con el diseño #MakeAndyGreatAgain, inspirada en la dualidad del ser y el humor eterno de la banda. Color azul con impresión frontal del logo y reverso con diseño minimalista.',
+      description: 'Camiseta de Afónica Naranjo en color vino sin coca-cola, homenaje a una voz y una esencia que merecen volver a brillar.',
       price: 18,
       images: {
         front: '/images/products/t-shirt-andy-front.webp',
