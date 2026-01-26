@@ -22,7 +22,7 @@ export const mockBandInfo: BandInfo = {
       id: 'tshirt-amaia',
       name: 'Camiseta Amaia',
       description: 'Camiseta negra 100% algodón. Logo de la banda en el pecho y diseño tributo a Amaia en la espalda.',
-      price: 15,
+      price: 20,
       images: {
         front: '/images/products/tshirt-front.webp',
         back: '/images/products/tshirt-amaia-back.webp'
@@ -33,7 +33,7 @@ export const mockBandInfo: BandInfo = {
       id: 'tshirt-chayanne',
       name: 'Camiseta Chayanne',
       description: 'Camiseta negra 100% algodón. Logo de la banda en el pecho y diseño tributo a Chayanne en la espalda.',
-      price: 15,
+      price: 20,
       images: {
         front: '/images/products/tshirt-front.webp',
         back: '/images/products/tshirt-chayanne-back.webp'
@@ -44,7 +44,7 @@ export const mockBandInfo: BandInfo = {
       id: 'tshirt-andy-lucas',
       name: 'MAKE ANDY GREAT AGAIN – Camiseta Afónica Naranjo edición #TeamAndy',
       description: 'Camiseta de Afónica Naranjo en color vino sin coca-cola, homenaje a una voz y una esencia que merecen volver a brillar.',
-      price: 18,
+      price: 20,
       images: {
         front: '/images/products/t-shirt-andy-front.webp',
         back: '/images/products/t-shirt-andy-back.webp'
