@@ -1,12 +1,9 @@
 'use client';
 
 import { useEffect } from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 export default function ShowsSection() {
   useEffect(() => {
-    // Load Bandsintown widget script
     const script = document.createElement('script');
     script.src = 'https://widgetv3.bandsintown.com/main.min.js';
     script.charset = 'utf-8';
@@ -19,31 +16,17 @@ export default function ShowsSection() {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900" id="bandsintown-widget">
+    <section
+      className="py-12 md:py-16 px-4 bg-gradient-to-b from-black to-gray-900"
+      id="bandsintown-widget"
+    >
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 text-center">Próximos Conciertos</h2>
-        
-        {/* Tour Poster */}
-        <motion.div 
-          className="max-w-2xl mx-auto mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="relative aspect-[1/1.4] rounded-lg overflow-hidden">
-            <Image
-              src="/images/tour/tour-2025.webp"
-              alt="Si no te gusta, hazlo Tour 2025 - Afónica Naranjo"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-        </motion.div>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 text-center">
+          Próximos Conciertos
+        </h2>
 
-        {/* Bandsintown Widget */}
         <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-b from-gray-900/30 to-black/40 backdrop-blur-sm border border-gray-800/20">
-          <a 
+          <a
             className="bit-widget-initializer"
             data-artist-name="id_15572618"
             data-events-to-display=""
@@ -128,4 +111,4 @@ export default function ShowsSection() {
       </div>
     </section>
   );
-} 
+}
