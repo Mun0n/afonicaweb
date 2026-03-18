@@ -101,6 +101,9 @@ const Toolbar = () => {
           <button onClick={() => handleNavigation('/#recomendaciones')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Recomendaciones
           </button>
+          <button onClick={() => handleNavigation('/mensajes')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
+            Mensajes en directo
+          </button>
           <button onClick={() => handleNavigation('/contacto')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Contacto
           </button>
@@ -153,6 +156,12 @@ const Toolbar = () => {
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
           >
             Recomendaciones
+          </button>
+          <button
+            onClick={() => handleNavigation('/mensajes')}
+            className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
+          >
+            Mensajes en directo
           </button>
           <button
             onClick={() => handleNavigation('/contacto')}
