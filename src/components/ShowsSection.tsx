@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 export default function ShowsSection() {
   useEffect(() => {
@@ -24,6 +25,18 @@ export default function ShowsSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 text-center">
           Próximos Conciertos
         </h2>
+
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="relative aspect-[1/1.4] rounded-lg overflow-hidden">
+            <Image
+              src="/images/tour/tour_2026.webp"
+              alt="Poster gira 2026 - Afónica Naranjo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
 
         <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-b from-gray-900/30 to-black/40 backdrop-blur-sm border border-gray-800/20">
           <a
