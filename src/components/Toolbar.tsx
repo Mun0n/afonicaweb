@@ -92,9 +92,14 @@ const Toolbar = () => {
           <button onClick={() => handleNavigation('/#bandsintown-widget')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Conciertos
           </button>
-          <button onClick={() => handleNavigation('/#tienda')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
+          <a
+            href="https://shop.afonicanaranjo.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#FF0000] transition-colors font-medium"
+          >
             Tienda
-          </button>
+          </a>
           <button onClick={() => handleNavigation('/#reviews')} className="text-white hover:text-[#FF0000] transition-colors font-medium">
             Reviews
           </button>
@@ -136,12 +141,18 @@ const Toolbar = () => {
           >
             Conciertos
           </button>
-          <button
-            onClick={() => handleNavigation('/#tienda')}
+          <a
+            href="https://shop.afonicanaranjo.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"
+            onClick={() => {
+              document.body.style.overflow = 'auto';
+              setIsMenuOpen(false);
+            }}
           >
             Tienda
-          </button>
+          </a>
           <button
             onClick={() => handleNavigation('/#reviews')}
             className="text-white hover:text-[#FF0000] transition-colors font-medium text-xl"

@@ -1,0 +1,449 @@
+/**
+ * Afónica Naranjo — PrestaShop Classic dark theme overrides
+ * Brand: #FF5733 orange on #000 black (matches www.afonicanaranjo.com)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --afonica-orange: #ff5733;
+  --afonica-black: #000000;
+  --afonica-zinc-800: #27272a;
+  --afonica-zinc-900: #18181b;
+  --afonica-gray-900: #111827;
+  --afonica-text: #ffffff;
+  --afonica-muted: #d1d5db;
+  --afonica-subtle: #9ca3af;
+}
+
+/* ── Top bar (injected via displayHeader) ── */
+.afonica-top-bar {
+  background: var(--afonica-black);
+  border-bottom: 1px solid var(--afonica-zinc-800);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+}
+
+.afonica-top-bar a {
+  color: var(--afonica-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.afonica-top-bar a:hover {
+  color: var(--afonica-orange);
+}
+
+/* ── Base ── */
+body,
+#wrapper,
+#main,
+.page-content,
+#content-wrapper,
+.page-home,
+#index {
+  background-color: var(--afonica-black) !important;
+  color: var(--afonica-text) !important;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: var(--afonica-muted);
+}
+
+a:hover {
+  color: var(--afonica-orange);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3 {
+  color: var(--afonica-text);
+}
+
+/* ── Header ── */
+#header,
+.header-nav,
+.header-top,
+#_desktop_top_menu,
+#_mobile_top_menu,
+.top-menu,
+.header-banner {
+  background-color: var(--afonica-black) !important;
+  border-color: var(--afonica-zinc-800) !important;
+}
+
+.header-nav {
+  border-bottom: 1px solid var(--afonica-zinc-800);
+}
+
+.header-top {
+  border-bottom: 1px solid var(--afonica-zinc-800);
+}
+
+.header-nav a,
+.header-top a,
+.top-menu a,
+#_desktop_user_info a,
+#_mobile_user_info a,
+.blockcart a,
+.cart-preview a {
+  color: var(--afonica-muted) !important;
+}
+
+.header-nav a:hover,
+.header-top a:hover,
+.top-menu a:hover,
+.top-menu .current a {
+  color: var(--afonica-orange) !important;
+}
+
+.search-widget form input[type='text'],
+.search-widget form input[type='search'],
+#search_widget input {
+  background-color: var(--afonica-zinc-900) !important;
+  border: 1px solid var(--afonica-zinc-800) !important;
+  color: var(--afonica-text) !important;
+}
+
+.search-widget form input::placeholder {
+  color: var(--afonica-subtle);
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb,
+.breadcrumb ol,
+.breadcrumb li,
+.breadcrumb a {
+  background: transparent !important;
+  color: var(--afonica-subtle) !important;
+}
+
+.breadcrumb a:hover {
+  color: var(--afonica-orange) !important;
+}
+
+/* ── Home hero / CMS blocks ── */
+#custom-text,
+.page-content.page-cms-1,
+#js-text {
+  background-color: var(--afonica-zinc-900) !important;
+  border: 1px solid var(--afonica-zinc-800);
+  color: var(--afonica-muted) !important;
+}
+
+#custom-text h1,
+#custom-text h2,
+.page-content.page-cms-1 h1 {
+  color: var(--afonica-text) !important;
+}
+
+/* ── Product cards ── */
+.product-miniature,
+.product-miniature .thumbnail-container,
+.product-miniature .product-description,
+.products .product,
+.featured-products .products {
+  background-color: var(--afonica-zinc-900) !important;
+}
+
+.product-miniature {
+  border: 1px solid var(--afonica-zinc-800);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.product-miniature .product-title a,
+.product-miniature h3 a,
+.product-miniature .product-title {
+  color: var(--afonica-text) !important;
+}
+
+.product-miniature .price,
+.product-price-and-shipping .price {
+  color: var(--afonica-text) !important;
+}
+
+.product-miniature .discount-percentage,
+.product-miniature .product-flags .new,
+.product-flags li,
+.online-only {
+  background-color: var(--afonica-orange) !important;
+  color: var(--afonica-text) !important;
+}
+
+/* ── Product page ── */
+#product #content,
+.product-container,
+.product-cover,
+.product-images,
+.product-prices,
+.product-information,
+.product-actions,
+.product-variants,
+.product-customization {
+  background-color: transparent !important;
+  color: var(--afonica-text);
+}
+
+.product-cover img,
+.product-images img {
+  background-color: var(--afonica-gray-900);
+}
+
+.current-price,
+.product-price {
+  color: var(--afonica-text) !important;
+}
+
+/* ── Cards & blocks ── */
+.card,
+.card-block,
+.block,
+.block-contact,
+.block-categories,
+.block_newsletter,
+#left-column .block,
+#right-column .block,
+.cart-summary,
+.cart-grid-body,
+.cart-grid-right,
+#checkout-personal-information-step,
+#checkout-addresses-step,
+#checkout-delivery-step,
+#checkout-payment-step,
+.checkout-step,
+.js-cart,
+.cart-overview {
+  background-color: var(--afonica-zinc-900) !important;
+  border-color: var(--afonica-zinc-800) !important;
+  color: var(--afonica-text) !important;
+}
+
+.card-header {
+  background-color: var(--afonica-black) !important;
+  border-color: var(--afonica-zinc-800) !important;
+  color: var(--afonica-text) !important;
+}
+
+/* ── Buttons ── */
+.btn-primary,
+.btn.btn-primary,
+.add-to-cart,
+.cart-preview .btn,
+.checkout .btn-primary,
+#payment-confirmation button,
+button.btn-primary {
+  background-color: var(--afonica-orange) !important;
+  border-color: var(--afonica-orange) !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover,
+.add-to-cart:hover,
+.checkout .btn-primary:hover {
+  background-color: var(--afonica-orange) !important;
+  border-color: var(--afonica-orange) !important;
+  opacity: 0.9;
+  color: #ffffff !important;
+}
+
+.btn-secondary,
+.btn-outline-primary,
+.btn.btn-secondary {
+  background-color: transparent !important;
+  border-color: var(--afonica-zinc-800) !important;
+  color: var(--afonica-text) !important;
+}
+
+.btn-secondary:hover,
+.btn-outline-primary:hover {
+  border-color: var(--afonica-orange) !important;
+  color: var(--afonica-orange) !important;
+}
+
+/* ── Forms ── */
+.form-control,
+.custom-select,
+select.form-control,
+input.form-control,
+textarea.form-control,
+.custom-radio input[type='radio'] + span,
+.custom-checkbox input[type='checkbox'] + span {
+  background-color: var(--afonica-zinc-900) !important;
+  border-color: var(--afonica-zinc-800) !important;
+  color: var(--afonica-text) !important;
+}
+
+.form-control:focus,
+select.form-control:focus,
+input.form-control:focus,
+textarea.form-control:focus {
+  border-color: var(--afonica-orange) !important;
+  box-shadow: 0 0 0 0.1rem rgba(255, 87, 51, 0.25) !important;
+}
+
+label,
+.form-group label,
+.custom-checkbox label {
+  color: var(--afonica-muted) !important;
+}
+
+/* ── Cart & checkout ── */
+.cart-grid,
+#cart,
+#order-confirmation,
+#checkout,
+.checkout-process,
+.order-confirmation-table,
+#order-items,
+.cart-summary-line,
+.product-line-grid,
+.cart-item {
+  background-color: transparent !important;
+  color: var(--afonica-text) !important;
+  border-color: var(--afonica-zinc-800) !important;
+}
+
+.cart-summary-line .label,
+.cart-summary-line .value {
+  color: var(--afonica-text) !important;
+}
+
+.checkout-step .step-title,
+.checkout-step.-reachable h1,
+.checkout-step.-current h1 {
+  color: var(--afonica-text) !important;
+  border-color: var(--afonica-zinc-800) !important;
+}
+
+.checkout-step.-current .step-number {
+  background-color: var(--afonica-orange) !important;
+}
+
+/* ── Modals & dropdowns ── */
+.modal-content,
+.dropdown-menu,
+.popover,
+.ui-widget-content,
+.quickview {
+  background-color: var(--afonica-zinc-900) !important;
+  border-color: var(--afonica-zinc-800) !important;
+  color: var(--afonica-text) !important;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--afonica-zinc-800) !important;
+}
+
+.close,
+.modal .close {
+  color: var(--afonica-text) !important;
+  opacity: 0.8;
+}
+
+/* ── Tables ── */
+table,
+.table,
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--afonica-zinc-900) !important;
+  color: var(--afonica-text) !important;
+}
+
+.table td,
+.table th {
+  border-color: var(--afonica-zinc-800) !important;
+}
+
+/* ── Footer ── */
+#footer,
+.footer-container,
+.footer-container .container,
+.block-contact-footer,
+.links,
+#footer_sub_menu {
+  background-color: var(--afonica-black) !important;
+  border-top: 1px solid var(--afonica-zinc-800);
+  color: var(--afonica-subtle) !important;
+}
+
+#footer h4,
+#footer .h3,
+.footer-container .h3,
+.links .h3 {
+  color: var(--afonica-text) !important;
+}
+
+#footer a,
+.footer-container a,
+.links a {
+  color: var(--afonica-subtle) !important;
+}
+
+#footer a:hover,
+.footer-container a:hover,
+.links a:hover {
+  color: var(--afonica-orange) !important;
+}
+
+/* Hide PrestaShop branding */
+.footer-container .copyright,
+a[href*='prestashop.com'] {
+  display: none !important;
+}
+
+/* ── Pagination ── */
+.pagination .page-list li,
+.pagination a {
+  background-color: var(--afonica-zinc-900) !important;
+  border-color: var(--afonica-zinc-800) !important;
+  color: var(--afonica-muted) !important;
+}
+
+.pagination .current a,
+.pagination a:hover {
+  background-color: var(--afonica-orange) !important;
+  border-color: var(--afonica-orange) !important;
+  color: #ffffff !important;
+}
+
+/* ── Alerts ── */
+.alert-info,
+.alert-warning,
+.alert-success,
+.alert-danger {
+  border-color: var(--afonica-zinc-800);
+}
+
+/* ── Wishlist module ── */
+.wishlist-button,
+.wishlist-button-add {
+  color: var(--afonica-muted) !important;
+}
+
+.wishlist-button:hover,
+.wishlist-button-add:hover {
+  color: var(--afonica-orange) !important;
+}
+
+/* ── Mobile menu ── */
+#mobile_top_menu_wrapper,
+#menu-icon,
+.menu-icon {
+  background-color: var(--afonica-black) !important;
+}
+
+#mobile_top_menu_wrapper .top-menu a {
+  color: var(--afonica-text) !important;
+  border-color: var(--afonica-zinc-800) !important;
+}
