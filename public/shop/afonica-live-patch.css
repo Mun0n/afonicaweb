@@ -1,0 +1,68 @@
+/* Live patch — loaded from CDN until child theme CSS is re-synced */
+
+/* Hide PrestaShop demo homepage banners */
+.page-home #carousel,
+.page-home a.banner {
+  display: none !important;
+}
+
+.page-home .featured-products {
+  margin-top: 0 !important;
+  padding-top: 1rem;
+}
+
+/* Newsletter footer block */
+.block_newsletter,
+#blockEmailSubscription_displayFooterBefore {
+  background-color: transparent !important;
+  border: none !important;
+  border-top: 1px solid #27272a !important;
+  padding: 2rem 0 1.5rem !important;
+  margin-bottom: 0;
+}
+
+#block-newsletter-label,
+.block_newsletter > .row > p,
+.block_newsletter p {
+  color: #d1d5db !important;
+}
+
+.block_newsletter form .col-xs-12:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.block_newsletter .input-wrapper {
+  flex: 1 1 12rem;
+  order: 1;
+  min-width: 0;
+}
+
+.block_newsletter .input-wrapper input[type='email'] {
+  background-color: #18181b !important;
+  border: 1px solid #27272a !important;
+  color: #ffffff !important;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+}
+
+.block_newsletter .input-wrapper input[type='email']::placeholder {
+  color: #9ca3af !important;
+}
+
+.block_newsletter input[type='submit'].btn-primary {
+  float: none !important;
+  order: 2;
+  flex: 0 0 auto;
+  align-self: stretch;
+  white-space: nowrap;
+}
+
+.block_newsletter form .col-xs-12 > p {
+  font-size: 0.75rem;
+  color: #9ca3af !important;
+  margin-top: 0.5rem;
+}
