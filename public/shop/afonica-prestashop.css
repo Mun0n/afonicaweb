@@ -57,6 +57,17 @@
   border-bottom: 1px solid var(--afonica-zinc-800);
 }
 
+/* Hide PrestaShop demo homepage banners — products should be first */
+.page-home #carousel,
+.page-home a.banner {
+  display: none !important;
+}
+
+.page-home .featured-products {
+  margin-top: 0 !important;
+  padding-top: 1rem;
+}
+
 /* ── Base ── */
 body,
 #wrapper,
