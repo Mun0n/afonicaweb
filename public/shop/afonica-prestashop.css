@@ -1,8 +1,10 @@
 /**
  * Afónica Naranjo — PrestaShop Classic dark theme overrides
  * Brand: #FF5733 orange on #000 black (matches www.afonicanaranjo.com)
+ *
+ * Child theme must not replace Classic's theme.css — import it explicitly.
  */
-
+@import url('/themes/classic/assets/css/theme.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
@@ -86,6 +88,19 @@ h6,
 .h2,
 .h3 {
   color: var(--afonica-text);
+}
+
+/* ── Logo (safety if Classic CSS fails to load) ── */
+#header .logo,
+#_desktop_logo .logo,
+#_desktop_logo img,
+#_mobile_logo img {
+  display: block;
+  max-height: 3rem;
+  max-width: 11rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 /* ── Header ── */
