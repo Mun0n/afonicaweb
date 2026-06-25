@@ -36,6 +36,25 @@
   color: var(--afonica-orange);
 }
 
+/* Nav bar lives in child theme header — hide legacy copies from ps_customtext */
+#custom-text .afonica-top-bar,
+.page-home > #custom-text {
+  display: none !important;
+}
+
+.afonica-merch-banner,
+.header-banner #custom-text h1 {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--afonica-muted) !important;
+  background: var(--afonica-black);
+  border-bottom: 1px solid var(--afonica-zinc-800);
+}
+
 /* ── Base ── */
 body,
 #wrapper,
@@ -398,7 +417,9 @@ table,
 
 /* Hide PrestaShop branding */
 .footer-container .copyright,
-a[href*='prestashop.com'] {
+a[href*='prestashop.com'],
+#footer a[href*='/tiendas'],
+#footer a[href*='mapa'] {
   display: none !important;
 }
 
