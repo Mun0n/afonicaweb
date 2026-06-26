@@ -1,68 +1,150 @@
-/* Live patch — loaded from CDN until child theme CSS is re-synced */
+/* Live patch — CDN fallback when PrestaShop theme CSS is stale */
 
-/* Hide PrestaShop demo homepage banners */
 .page-home #carousel,
 .page-home a.banner {
   display: none !important;
 }
 
-.page-home .featured-products {
-  margin-top: 0 !important;
-  padding-top: 1rem;
+.page-home .header-banner #custom-text,
+.page-home #custom-text .afonica-merch-banner {
+  display: none !important;
 }
 
-/* Newsletter footer block */
 .block_newsletter,
-#blockEmailSubscription_displayFooterBefore {
-  background-color: transparent !important;
-  border: none !important;
-  border-top: 1px solid #27272a !important;
-  padding: 2rem 0 1.5rem !important;
-  margin-bottom: 0;
+#blockEmailSubscription_displayFooterBefore,
+#blockEmailSubscription_displayFooter {
+  display: none !important;
 }
 
-#block-newsletter-label,
-.block_newsletter > .row > p,
-.block_newsletter p {
-  color: #d1d5db !important;
+/* Hero placeholder */
+.afonica-hero {
+  position: relative;
+  margin: 1.25rem auto 2rem;
+  max-width: 80rem;
+  min-height: clamp(12rem, 32vw, 18rem);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  background-image:
+    linear-gradient(120deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.72)),
+    url('https://afonicanaranjo.com/images/tour/tour_2026.webp');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #27272a;
 }
 
-.block_newsletter form .col-xs-12:first-child {
+.afonica-hero__content {
+  position: relative;
+  z-index: 1;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(12rem, 32vw, 18rem);
+  padding: 2rem 1.5rem;
 }
 
-.block_newsletter .input-wrapper {
-  flex: 1 1 12rem;
-  order: 1;
-  min-width: 0;
-}
-
-.block_newsletter .input-wrapper input[type='email'] {
-  background-color: #18181b !important;
-  border: 1px solid #27272a !important;
-  color: #ffffff !important;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 0;
-}
-
-.block_newsletter .input-wrapper input[type='email']::placeholder {
-  color: #9ca3af !important;
-}
-
-.block_newsletter input[type='submit'].btn-primary {
-  float: none !important;
-  order: 2;
-  flex: 0 0 auto;
-  align-self: stretch;
-  white-space: nowrap;
-}
-
-.block_newsletter form .col-xs-12 > p {
+.afonica-hero__eyebrow {
+  margin: 0 0 0.5rem;
   font-size: 0.75rem;
-  color: #9ca3af !important;
-  margin-top: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.afonica-hero__title {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 800;
+  color: #fff !important;
+  text-transform: uppercase;
+}
+
+/* Cards */
+.afonica-card__media {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  background: #0f0f0f !important;
+  overflow: hidden !important;
+}
+
+.afonica-card__img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  display: block !important;
+  padding: 0.75rem !important;
+}
+
+.product-miniature.afonica-card {
+  background: #1a1a1a !important;
+  border: 1px solid #27272a !important;
+  border-radius: 0.75rem !important;
+}
+
+.afonica-card__price {
+  color: #ff5733 !important;
+  font-weight: 700;
+}
+
+.afonica-card__btn {
+  display: block;
+  border: 1px solid #ff5733;
+  border-radius: 0.5rem;
+  color: #ff5733 !important;
+  text-align: center;
+  padding: 0.625rem 0.875rem;
+  text-decoration: none !important;
+}
+
+.page-home .featured-products .products,
+.page-home .featured-products > .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+  max-width: 80rem !important;
+  margin: 0 auto !important;
+}
+
+.page-home .featured-products .js-product.product {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 576px) {
+  .page-home .featured-products .js-product.product {
+    flex: 0 0 calc(50% - 0.5rem) !important;
+    max-width: calc(50% - 0.5rem) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-home .featured-products .js-product.product {
+    flex: 0 0 calc(25% - 0.9375rem) !important;
+    max-width: calc(25% - 0.9375rem) !important;
+  }
+}
+
+.afonica-shop-section__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.afonica-shop-section__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff !important;
+}
+
+.afonica-shop-section__link {
+  color: #ff5733 !important;
 }
