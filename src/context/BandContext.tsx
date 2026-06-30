@@ -109,6 +109,24 @@ export function BandProvider({ children }: { children: ReactNode }) {
         date: "2025-02-12",
         location: "Autovía del Este, Km. 207, 16212 Pozoseco, Cuenca",
         reviewUrl: "https://maps.app.goo.gl/bnNjAtDn3bBqWsuf8"
+      },
+      {
+        businessName: "Restaurante Don Quijote",
+        businessUrl: "https://maps.app.goo.gl/9FkgrTARYw5JdJSB8",
+        rating: 5,
+        content: "\"¡Menuda morcilla!\" Podría ser lo que dijeran en el club de luces rojas próximo a este restaurante, pero fue lo que dijimos nosotros cuando nos trajeron a la mesa la morcilla de calabaza y cebolla caramelizada que tenían fuera de carta. Estaba sencillamente brutal. Aunque nada que envidiar a la parrillada de verduras a la brasa: una orgía vegetariana de pimientos, cebolla, champiñones, calabacín, espárragos... Es de sobra conocido que cuando comes espárragos, te huele la orina; la próxima meada nos olerá al producto de primera calidad que nos pusieron en el Don Quijote.\n\nEl espectáculo de la parrilla lo culminamos con un solomillo que estaba como esperábamos: delicioso.\n\nLos postres caseros (tarta de queso y flan) pusieron el broche dulce que nuestras amargas vidas necesitaban.\n\nSitio top, con personal top y al ladito de la autovía.",
+        date: "2026-05-23",
+        location: "Autovía del Suroeste, 128, 45686 Calera y Chozas, Toledo",
+        reviewUrl: "https://maps.app.goo.gl/Ev2F9jXVNfKCHFeq8"
+      },
+      {
+        businessName: "Los jardines de Despeñaperros",
+        businessUrl: "https://maps.app.goo.gl/jcDVLpzARnbRonKo6",
+        rating: 5,
+        content: "María no nos ha tratado como a clientes, sino como se trata a los amigos. Y eso es lo que hace grande a este sitio. Su sonrisa y cercanía solo es comparable al sabor de sus platos y la calidad de sus productos. Llegamos hambrientos y nos vamos con el estómago lleno y el corazón contento. Una perla escondida entre los acantilados de Despeñaperros.",
+        date: "2026-03-27",
+        location: "23213 Santa Elena, Jaén",
+        reviewUrl: "https://maps.app.goo.gl/xEwaCjE1g9WtXBhe7"
       }
 
     ],

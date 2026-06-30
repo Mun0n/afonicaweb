@@ -31,7 +31,9 @@ const getCoordinatesFromUrl = (url: string, businessName: string) => {
     'Planta Tratamiento Purines Almazan': [41.5052231, -2.4988371],
     'Piscina municipal': [39.6500, -5.6500],
     'Gasolinera La Valenti': [41.4880, -2.5310],
-    'La Noguera de Pozoseco': [39.5697, -2.3672]
+    'La Noguera de Pozoseco': [39.5697, -2.3672],
+    'Restaurante Don Quijote': [39.9427282, -4.9548839],
+    'Los jardines de Despeñaperros': [38.4003405, -3.5036186]
   };
 
   if (knownLocations[businessName]) {
