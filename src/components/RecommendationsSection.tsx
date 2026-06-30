@@ -138,9 +138,6 @@ export default function RecommendationsSection() {
           aria-roledescription="carousel"
           aria-label="Reseñas de la gira"
         >
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-gray-900 to-transparent hidden sm:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-gray-900 to-transparent hidden sm:block" />
-
           <div
             ref={scrollRef}
             className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 -mx-4 px-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
