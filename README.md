@@ -34,8 +34,10 @@ v1.0.0 - First stable release with:
 - [x] Configure PrestaShop URLs and routing
 - [x] Set up secure environment variables
 - [x] Deploy to production environment
+- [x] Afonica Dark child theme (Classic parent) — see [`public/shop/README.md`](public/shop/README.md)
+- [x] Storefront dark brand styling on shop.afonicanaranjo.com (v1.2.5)
 - [ ] Create API endpoints for product sync
-- [ ] Implement shopping cart functionality
+- [ ] Implement shopping cart functionality (main site embed)
 - [ ] Add secure checkout process
 - [ ] Set up inventory management
 - [ ] Implement order tracking

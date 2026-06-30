@@ -1,7 +1,7 @@
 parent: classic
 name: afonica
-display_name: Afonica Dark
-version: 1.2.1
+display_name: Afonica Dark 1.2.5
+version: 1.2.5
 author:
   name: Afonica Naranjo
   email: contact@afonicanaranjo.com
@@ -27,9 +27,26 @@ meta:
 
 assets:
   use_parent_assets: true
+  css:
+    all:
+      - id: afonica-dark
+        path: assets/css/afonica-dark.css
+        media: all
+        priority: 200
+  js:
+    all:
+      - id: afonica-shop
+        path: assets/js/afonica-shop.js
+        priority: 200
+        attribute: defer
 
 global_settings:
+  configuration:
+    HOME_FEATURED_CAT: 3
+    HOME_FEATURED_NBR: 8
   modules:
+    to_enable:
+      - ps_featuredproducts
     to_disable:
       - ps_imageslider
       - ps_banner

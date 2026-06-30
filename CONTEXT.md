@@ -13,6 +13,9 @@ Afónica Naranjo's official website, built with Next.js 14. The site serves as t
 - Section-based navigation with smooth scrolling
 - CSS optimization with critters
 - Mobile-responsive design
+- PrestaShop store at **shop.afonicanaranjo.com** with **Afonica Dark** child theme (v1.2.5)
+- Theme source in `public/shop/theme-src/`; build via `public/shop/build-theme.sh`
+- Theme docs: [`public/shop/README.md`](public/shop/README.md)
 
 ## Technical Stack
 - **Framework**: Next.js 14
@@ -50,10 +53,17 @@ Afónica Naranjo's official website, built with Next.js 14. The site serves as t
 - CDN for static assets
 - CSS optimization
 
+## PrestaShop store
+- **URL:** https://shop.afonicanaranjo.com
+- **Theme:** Afonica Dark child of Classic (PrestaShop 8.1.x)
+- **Import artifact:** `public/shop/afonica-child-theme.zip` (also on CDN at `/shop/afonica-child-theme.zip`)
+- **Home products:** `ps_featuredproducts` → category **Camisetas** (id `3`), set in `theme.yml` as `HOME_FEATURED_CAT`
+- **Do not use:** `afonica-dark-child-theme.zip` (obsolete)
+
 ## Next Steps
 1. Implement main content sections
-2. Add shop functionality
+2. Deeper main-site ↔ PrestaShop integration (cart embed, product sync API)
 3. Create shows/concerts section
 4. Develop media gallery
 5. Add contact functionality
-6. Set up custom domain 
+6. Set up custom domain

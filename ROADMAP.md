@@ -35,6 +35,13 @@
   - Shopping cart functionality
   - Checkout process
   - Updated product pricing display
+- PrestaShop child theme (**Afonica Dark** v1.2.5):
+  - Dark brand styling aligned with www.afonicanaranjo.com
+  - Hero, utility bar, 4-col product cards, trust bar
+  - `head.tpl` cache-busted CSS/JS + CDN live-patch
+  - `HOME_FEATURED_CAT: 3` (Camisetas) for homepage products
+  - Build/import docs in `public/shop/README.md`
+  - E2E: `e2e/import-shop-theme.spec.ts`, `e2e/configure-shop-theme.spec.ts`
 - Contact page improvements:
   - Updated welcome message
   - Refined booking and contact texts
@@ -94,7 +101,7 @@
 
 ## Future Considerations 🤔
 - Multi-language support
-- Dark/light theme
+- Dark/light theme toggle on main site (shop already uses dark theme)
 - Member-only content
 - Ticket sales integration
 - Live streaming capabilities

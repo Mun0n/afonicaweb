@@ -9,3 +9,9 @@
     </div>
   </section>
 {/block}
+
+{block name='page_content'}
+  {block name='page_content_top'}{/block}
+  {widget name='ps_featuredproducts'}
+  {block name='page_content_bottom'}{/block}
+{/block}
